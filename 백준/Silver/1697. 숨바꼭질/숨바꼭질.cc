@@ -24,11 +24,6 @@ void bfs(int dst) {
             q.push(2*x);
         }
         if (x == dst) break;
-        // cout << endl;
-        // for (int i = 0; i < 50; i++) {
-        // cout << position[i] << " ";
-        // }
-        // cout << endl;
     }
 }
 
@@ -42,9 +37,5 @@ int main() {
     }
     position[N] = 0;
     bfs(K);
-    // for (int i = 0; i < 50; i++) {
-    //     cout << position[i] << " ";
-    // }
-    // cout << endl;
     cout << position[K];
 }
