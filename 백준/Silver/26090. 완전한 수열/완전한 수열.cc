@@ -5,13 +5,6 @@ using namespace std;
 
 int primes[1000000];
 
-void print(vector<int> v) {
-    for (auto i : v) {
-        cout << i << " ";
-    }
-    cout << endl;
-}
-
 void eras() {
     fill(primes, primes + 1000000, 1);
     primes[0] = 0;
@@ -38,8 +31,6 @@ int main() {
         if (i == 0) accumulated[0] = sequence[0];
         else accumulated[i] = accumulated[i - 1] + sequence[i];
     }
-    // print(sequence);
-    // print(accumulated);
     for (int i = 0; i < N; i++) {
         for (int j = i; j < N; j++) {
             if (!primes[j - i + 1]) continue;
@@ -52,6 +43,3 @@ int main() {
     }
     cout << cnt;
 }
-// 0 1  2  3
-// 2 7  4  1
-// 2 9 13 14
