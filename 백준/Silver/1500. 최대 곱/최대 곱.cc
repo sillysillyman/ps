@@ -7,8 +7,8 @@ int main() {
     
     cin >> S >> K;
 
-    long long q = S/K;
-    long long sum = q*K;
+    int q = S/K;
+    int sum = q*K;
     long long res = 1;
 
     for (int i = 0; i < S - sum; i++) res *= (q + 1);
