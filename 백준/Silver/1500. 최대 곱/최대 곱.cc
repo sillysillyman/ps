@@ -8,10 +8,10 @@ int main() {
     cin >> S >> K;
 
     int q = S/K;
-    int sum = q*K;
+    int s = q*K;
     long long res = 1;
 
-    for (int i = 0; i < S - sum; i++) res *= (q + 1);
-    for (int i = 0; i < K - S + sum; i++) res *= q;
+    for (int i = 0; i < S - s; i++) res *= (q + 1);
+    for (int i = 0; i < K - S + s; i++) res *= q;
     cout << res;
 }
