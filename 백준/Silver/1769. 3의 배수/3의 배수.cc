@@ -36,10 +36,7 @@ string sum_digits(string x) {
 
         s = x[i];
         res = add(res, s);
-        // cout << "s: " << s << endl;
-        // cout << "res: " << res << endl;
     }
-    // cout << "res: " << res << endl;
     if (res.length() > 1) res = sum_digits(res);
     return res;
 }
