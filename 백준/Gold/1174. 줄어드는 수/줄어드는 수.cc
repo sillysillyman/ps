@@ -16,7 +16,6 @@ void make_decreasing_number(int idx, string s) {
         t.push_back(digits[i]);
         v.push_back(stoll(t));
         make_decreasing_number(i + 1, t);
-
     }
 }
 
