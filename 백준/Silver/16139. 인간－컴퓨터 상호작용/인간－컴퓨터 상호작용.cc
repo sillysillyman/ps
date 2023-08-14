@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int accumulated[200000];
+map<int, map<char, int>> m;
 
 int main() {
     ios::sync_with_stdio(false);
@@ -13,7 +13,6 @@ int main() {
     int q;
     char a;
     int l, r;
-    map<int, map<char, int>> m;
 
     cin >> S;
     cin >> q;
