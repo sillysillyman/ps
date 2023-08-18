@@ -23,6 +23,6 @@ int main() {
     double min_perimeter = min(2*(ab + bc), min(2*(bc + ca), 2*(ca + ab)));;
 
     cout << fixed;
-    cout.precision(11);
+    cout.precision(10);
     cout << max_perimeter - min_perimeter;
 }
