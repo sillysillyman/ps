@@ -15,7 +15,6 @@ int main() {
         if ((X <= x && x <= X + W) && (Y <= y && y <= Y + H)) cnt++;
         else if (sqrt((X - x)*(X - x) + (Y + R - y)*(Y + R - y)) <= R) cnt++;
         else if (sqrt((X + W - x)*(X + W - x) + (Y + R - y)*(Y + R - y)) <= R) cnt++;
-        else continue;
     }
     cout << cnt;
 }
