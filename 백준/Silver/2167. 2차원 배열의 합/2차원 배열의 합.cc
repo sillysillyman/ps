@@ -5,6 +5,9 @@ using namespace std;
 int arr[300][300];
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
     int N, M;
 
     cin >> N >> M;
