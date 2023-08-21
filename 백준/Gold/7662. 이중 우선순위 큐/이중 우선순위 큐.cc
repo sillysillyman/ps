@@ -40,29 +40,7 @@ int main() {
         }
         while (!min_heap.empty() && cnt[min_heap.top()] == 0) min_heap.pop();
         while (!max_heap.empty() && cnt[max_heap.top()] == 0) max_heap.pop();
-        // cout << max_heap.top() << endl;
-        // cout << min_heap.top() << endl;
-        // cout << "max_heap: ";
-        // while (!max_heap.empty()) {
-        //     cout << max_heap.top() << ' ';
-        //     max_heap.pop();
-        // }
-        // cout << '\n';
-        // cout << "min_heap: ";
-        // while (!min_heap.empty()) {
-        //     cout << min_heap.top() << ' ';
-        //     min_heap.pop();
-        // }
-        // cout << endl;
-        // for (auto i : cnt) {
-        //     cout << i.first << ": " << i.second << ", ";
-        // }
-        // if (max_heap.empty() && min_heap.empty()) cout << "EMPTY\n";
-        // else cout << max_heap.top() << " " << min_heap.top() << '\n';
         if (max_heap.empty() && min_heap.empty()) cout << "EMPTY\n";
         else cout << max_heap.top() << " " << min_heap.top() << '\n';
     }
 }
-// 16: 0, -5643: 0, 123: 0
-// max: 123
-// min:
