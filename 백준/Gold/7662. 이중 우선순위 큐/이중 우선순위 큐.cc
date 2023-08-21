@@ -1,6 +1,6 @@
 #include <iostream>
 #include <queue>
-#include <map>
+#include <unordered_map>
 
 using namespace std;
 
@@ -17,7 +17,7 @@ int main() {
         int num;
         priority_queue<int> max_heap;
         priority_queue<int, vector<int>, greater<int>> min_heap;
-        map<int, int> cnt;
+        unordered_map<int, int> cnt;
         
         cin >> k;
         while (k--) {
