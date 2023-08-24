@@ -1,39 +1,32 @@
 #include <iostream>
-#include <vector>
-#include <map>
 #include <algorithm>
 
 using namespace std;
 
 int N, M;
+int arr[9];
 int nums[9];
-map<int, int> visited;
-vector<int> v;
+int visited[9];
 
 void dfs(int cnt) {
     if (cnt == M) {
-        for (int i = 0; i < M; i++) cout << nums[i] << ' ';
+        for (int i = 0; i < M; i++) cout << arr[i] << ' ';
         cout << '\n';
         return;
     }
     for (int i = 0; i < N; i ++) {
-        if (!visited[v[i]]) {
-            visited[v[i]] = 1;
-            nums[cnt] = v[i];
+        if (!visited[i]) {
+            visited[i] = 1;
+            arr[cnt] = nums[i];
             dfs(cnt + 1);
-            visited[v[i]] = 0;
+            visited[i] = 0;
         }
     }
 }
 
 int main() {
-    int num;
-
     cin >> N >> M;
-    for (int i = 0; i < N; i++) {
-        cin >> num;
-        v.push_back(num);
-    }
-    sort(v.begin(), v.end());
+    for (int i = 0; i < N; i++) cin >> nums[i];
+    sort(nums, nums + N);
     dfs(0);
 }
