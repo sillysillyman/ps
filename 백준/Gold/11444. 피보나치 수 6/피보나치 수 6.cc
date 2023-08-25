@@ -39,9 +39,5 @@ int main() {
 
     cin >> n;
     res = pow(mat, n);
-    // for (int i = 0; i < 2; i++) {
-    //     for (int j = 0; j < 2; j++) cout << res[i][j] << ' ';
-    //     cout << '\n';
-    // }
     cout << res[0][1];
 }
