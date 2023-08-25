@@ -3,10 +3,11 @@
 using namespace std;
 
 typedef long long ll;
+typedef pair<int, int> point;
 
-int ccw(pair<int, int> p1, pair<int, int> p2, pair<int, int> p3) {
-    pair<int, int> v = {p2.first - p1.first, p2.second - p1.second};
-    pair<int, int> w = {p3.first - p2.first, p3.second - p2.second};
+int ccw(point p1, point p2, point p3) {
+    point v = {p2.first - p1.first, p2.second - p1.second};
+    point w = {p3.first - p2.first, p3.second - p2.second};
 
     ll cross_product = (ll)v.first*w.second - (ll)w.first*v.second;
 
