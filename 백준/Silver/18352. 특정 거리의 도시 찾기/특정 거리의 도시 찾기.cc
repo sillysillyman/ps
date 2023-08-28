@@ -11,7 +11,6 @@ vector<int> cities;
 vector<int> graph[300001];
 
 void bfs(int x) {
-    int dist = 0;
     queue<pair<int, int>> q;
 
     q.push({x, 0});
