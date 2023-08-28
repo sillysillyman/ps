@@ -5,7 +5,7 @@ using namespace std;
 typedef long long ll;
 
 const int MOD = 10007;
-ll dp[1001][1001];
+int dp[1001][1001];
 
 int main() {
     int N, K;
