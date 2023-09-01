@@ -31,6 +31,9 @@ string add(string a, string b) {
 }
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
     int n;
 
     dp[0] = "1";
