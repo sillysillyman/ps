@@ -6,6 +6,9 @@ using namespace std;
 vector<int> fibo;
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
     int T, n;
 
     fibo.push_back(0);
@@ -21,7 +24,7 @@ int main() {
         cin >> n;
 
         string res = "";
-        
+
         for (int i = fibo.size() - 1; i >= 0; i--) {
             if (n == 0) break;
             if (fibo[i] > n) continue;
