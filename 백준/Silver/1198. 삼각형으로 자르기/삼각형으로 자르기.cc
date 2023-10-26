@@ -33,7 +33,7 @@ int main() {
                 area = 0.5*abs((p1.x*p2.y + p2.x*p3.y + p3.x*p1.y) - (p2.x*p1.y + p3.x*p2.y + p1.x*p3.y));
                 max_area = max(max_area, area);
             }
-        } 
+        }
     }
     cout << fixed;
     cout.precision(9);
