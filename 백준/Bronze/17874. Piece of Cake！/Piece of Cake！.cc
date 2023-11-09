@@ -6,7 +6,5 @@ int main() {
     int n, h, v;
 
     cin >> n >> h >> v;
-    h = max(h, n - h);
-    v = max(v, n - v);
-    cout << h*v*4;
+    cout << 4*max(h, n - h)*max(v, n - v);
 }
