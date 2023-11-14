@@ -55,12 +55,11 @@ int main() {
             max_rain = max(max_rain, graph[i][j]);
         }
     }
-    // cout << '\n';
+    
     int safe_areas = 0;
 
     for (int rain = 0; rain <= max_rain; rain++) {
         reset_visited();
-        // cout << "rain: " << rain << '\n';
         cnt = 1;
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
@@ -69,14 +68,6 @@ int main() {
                 cnt++;
             }
         }
-        // for (int i = 0; i < N; i++) {
-        //     for (int j = 0; j < N; j++) {
-        //         cout << visited[i][j] << ' ';
-        //     }
-        //     cout << '\n';
-        // }
-        // cout << '\n';
-
         for (int i = 0; i < N; i++) safe_areas = max(safe_areas, *max_element(visited[i], visited[i] + N));
     }
     cout << safe_areas;
