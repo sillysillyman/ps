@@ -46,6 +46,9 @@ void bfs(int x, int y, int rain) {
 }
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
     int max_rain = 0;
 
     cin >> N;
@@ -55,7 +58,7 @@ int main() {
             max_rain = max(max_rain, graph[i][j]);
         }
     }
-    
+
     int safe_areas = 0;
 
     for (int rain = 0; rain <= max_rain; rain++) {
