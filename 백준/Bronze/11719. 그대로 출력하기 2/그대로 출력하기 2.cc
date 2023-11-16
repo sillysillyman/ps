@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    string line;
+  string line;
 
-    while (getline(cin, line)) cout << line << '\n';
+  while (getline(cin, line)) cout << line << '\n';
 }
