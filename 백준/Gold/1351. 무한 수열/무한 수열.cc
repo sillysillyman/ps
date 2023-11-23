@@ -9,10 +9,10 @@ typedef long long ll;
 int P, Q;
 map<ll, ll> A;
 
-ll get_value(ll n) {
-  if (A.find(n) != A.end()) return A[n];
-  A[n] = get_value((ll)floor((double)n / P)) + get_value((ll)floor((double)n / Q));
-  return A[n];
+ll get_value(ll i) {
+  if (A.find(i) != A.end()) return A[i];
+  A[i] = get_value((ll)floor((double)i / P)) + get_value((ll)floor((double)i / Q));
+  return A[i];
 }
 
 int main() {
