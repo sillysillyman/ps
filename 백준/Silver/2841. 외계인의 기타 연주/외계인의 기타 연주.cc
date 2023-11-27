@@ -18,20 +18,15 @@ int main() {
 
     cin >> string >> fret;
     string--;
-    // cout << '\n';
-    // cout << "string: " << string << ", fret: " << fret << endl;
     if (guitar[string].empty() || guitar[string].top() < fret) {
-    //   cout << "push " << string << ' ' << fret << '\n';
       guitar[string].push(fret);
       finger_move++;
     } else {
       while (guitar[string].top() > fret) {
-        // cout << "pop " << string << ' ' << guitar[string].top() << '\n';
         guitar[string].pop();
         finger_move++;
         if (guitar[string].empty()) break;
       }
-    //   cout << "push " << string << ' ' << fret << '\n';
       if (!guitar[string].empty() && guitar[string].top() == fret) continue;
       guitar[string].push(fret);
       finger_move++;
