@@ -8,7 +8,7 @@ int main() {
   int N, K, A, B;
 
   cin >> N >> K;
-  fill(&network[1][1], &network[N][N + 1], 100000);
+  fill(&network[1][1], &network[N][N + 1], 10000);
   for (int i = 1; i <= N; i++) network[i][i] = 0;
   for (int i = 0; i < K; i++) {
     cin >> A >> B;
