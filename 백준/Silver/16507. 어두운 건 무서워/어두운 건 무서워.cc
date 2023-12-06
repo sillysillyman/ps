@@ -5,6 +5,9 @@ using namespace std;
 int photo[1000][1000];
 
 int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+
   int R, C, Q;
   int r1, c1, r2, c2;
 
