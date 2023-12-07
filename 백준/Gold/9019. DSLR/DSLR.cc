@@ -1,24 +1,9 @@
 #include <iostream>
 #include <queue>
-#include <map>
 
 using namespace std;
 
 const int MOD = 10000;
-string commands[4] = {"D", "S", "L", "R"};
-
-int calc(int n, string command) {
-  if (command == "D")
-    return (2 * n) % MOD;
-  else if (command == "S")
-    return (n == 0 ? 9999 : n - 1);
-  else if (command == "L")
-    return (n % 1000) * 10 + n / 1000;
-  else if (command == "R")
-    return (n % 10) * 1000 + n / 10;
-  else
-    return -1;
-}
 
 void bfs(int a, int b) {
   int visited[10000] = {};
