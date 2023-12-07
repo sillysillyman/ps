@@ -1,6 +1,6 @@
 #include <iostream>
-#include <queue>
 #include <map>
+#include <queue>
 
 using namespace std;
 
@@ -15,10 +15,11 @@ int bfs(int a, int b) {
   while (!q.empty()) {
     auto [n, cnt] = q.front();
 
-    // cout << "n: " << n << " cnt: " << cnt << endl;
     q.pop();
-    if (n == b) return cnt;
-    else if (n > b) break;    
+    if (n == b)
+      return cnt;
+    else if (n > b)
+      break;
     if (long long m = (long long)n * 2; m <= b && !visited[m]) {
       q.push({m, cnt + 1});
       visited[m] = 1;
