@@ -40,5 +40,4 @@ int main() {
   }
   cin >> n;
   cout << nums[n];
-//   for (int i = 0; i <= n; i++) cout << nums[i] << ' ';
 }
