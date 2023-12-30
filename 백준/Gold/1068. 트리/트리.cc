@@ -35,10 +35,6 @@ int main() {
     if (tree[i].empty()) tree[i].push_back(-1);
   }
   cin >> deleted;
-//   if (deleted == root) {
-//     cout << 0;
-//     return 0;
-//   }
   recursive_delete_node(deleted);
 
   int cnt = 0;
