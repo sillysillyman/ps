@@ -29,20 +29,29 @@ int main() {
 
     bool found = false;
 
+    // for (int i = 3; i < n; i += 2) {
+    //   if (!sieve[i]) continue;
+    //   for (int j = n - 3; j >= 3; j -= 2) {
+    //     if (sieve[j]) {
+    //       if (i + j == n) {
+    //         found = true;
+    //         cache[n] =
+    //             to_string(n) + " = " + to_string(i) + " + " + to_string(j);
+    //         cout << cache[n] << '\n';
+    //         break;
+    //       } else if (i + j < n)
+    //         break;
+    //     }
+    //   }
+    //   if (found) break;
+    // }
     for (int i = 3; i < n; i += 2) {
-      if (!sieve[i]) continue;
-      for (int j = n - 3; j >= 3; j -= 2) {
-        if (sieve[j]) {
-          if (i + j == n) {
-            found = true;
-            cache[n] = to_string(n) + " = " + to_string(i) + " + " + to_string(j);
-            // cout << n << " = " << i << " + " << j << '\n';
-            cout << cache[n] << '\n';
-            break;
-          } else if (i + j < n) break;
-        }
+      if (sieve[i] && sieve[n - i]) {
+        // cache[n] = to_string(n) + " = " + to_string(i) + " + " + to_string(n - i);
+        // cout << cache[n] << '\n';
+        cout << n << " = " << i << " + " << n - i << '\n';
+        break;
       }
-      if (found) break;
     }
   }
 }
