@@ -22,12 +22,12 @@ int main() {
   while (true) {
     cin >> n;
     if (n == 0) break;
-    if (!cache[n].empty()) {
-      cout << cache[n] << '\n';
-      continue;
-    }
+    // if (!cache[n].empty()) {
+    //   cout << cache[n] << '\n';
+    //   continue;
+    // }
 
-    bool found = false;
+    // bool found = false;
 
     // for (int i = 3; i < n; i += 2) {
     //   if (!sieve[i]) continue;
