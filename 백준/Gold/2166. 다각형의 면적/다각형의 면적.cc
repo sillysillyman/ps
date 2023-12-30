@@ -16,7 +16,7 @@ long long cross_product(point origin, point p, point q) {
 
 int main() {
   int N;
-  long double area = 0;
+  double area = 0;
 
   cin >> N;
 
