@@ -18,17 +18,14 @@ void recursive_delete_node(int idx) {
 
 int main() {
   int N;
-  int root, deleted;
+  int deleted;
 
   cin >> N;
   for (int i = 0; i < N; i++) {
     int parent;
 
     cin >> parent;
-    if (parent == -1) {
-      root = i;
-      continue;
-    }
+    if (parent == -1) continue;
     tree[parent].push_back(i);
   }
   for (int i = 0; i < N; i++) {
