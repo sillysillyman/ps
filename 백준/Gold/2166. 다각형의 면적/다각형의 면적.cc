@@ -15,6 +15,9 @@ long long cross_product(point origin, point p, point q) {
 }
 
 int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+
   int N;
   double area = 0;
 
@@ -27,8 +30,6 @@ int main() {
     cin >> p.x >> p.y;
     points[i] = p;
   }
-//   cout << '\n';
-//   for (int i = 0; i < N; i++) cout << points[i].x << ' ' << points[i].y << '\n';
   cout << fixed;
   cout.precision(1);
   for (int i = 1; i < N - 1; i++) {
