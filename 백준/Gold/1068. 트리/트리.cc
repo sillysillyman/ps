@@ -34,47 +34,19 @@ int main() {
   for (int i = 0; i < N; i++) {
     if (tree[i].empty()) tree[i].push_back(-1);
   }
-//   cout << '\n';
-//   for (int i = 0; i < N; i++) {
-//     cout << i << ": ";
-//     for (auto j : tree[i]) cout << j << " ";
-//     cout << '\n';
-//   }
   cin >> deleted;
-  if (deleted == root) {
-    cout << 0;
-    return 0;
-  }
-  recursive_delete_node(deleted);
-//   cout << '\n';
-//   for (int i = 0; i < N; i++) {
-//     cout << i << ": ";
-//     for (auto j : tree[i]) cout << j << " ";
-//     cout << '\n';
-//   }
-
-//   bool is_root_leaf = true;
-
-//   if (tree[root].size() > 1) is_root_leaf = false;
-//   for (int i = 0; i < N; i++) {
-//     if (i == root) continue;
-//     if (tree[i].empty()) continue;
-//     is_root_leaf = false;
-//   }
-//   if (is_root_leaf) {
-//     cout << 1;
+//   if (deleted == root) {
+//     cout << 0;
 //     return 0;
 //   }
+  recursive_delete_node(deleted);
 
   int cnt = 0;
 
   for (int i = 0; i < N; i++) {
     if (tree[i].empty()) continue;
-    if (tree[i][0] == -1 || (tree[i].size() == 1 && tree[tree[i][0]].empty())) {
-        cnt++;
-        // cout << i << " is leaf\n";
-        // cout << "tree[" << i << "]: " << tree[i][0] << '\n';
-    }
+    if (tree[i][0] == -1 || (tree[i].size() == 1 && tree[tree[i][0]].empty()))
+      cnt++;
   }
   cout << cnt;
 }
