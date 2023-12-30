@@ -32,8 +32,7 @@ int main() {
   }
   cout << fixed;
   cout.precision(1);
-  for (int i = 1; i < N - 1; i++) {
+  for (int i = 1; i < N - 1; i++)
     area += cross_product(points[0], points[i + 1], points[i]) / 2.0;
-  }
   cout << abs(area);
 }
