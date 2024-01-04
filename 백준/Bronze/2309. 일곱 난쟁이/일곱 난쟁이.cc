@@ -25,8 +25,6 @@ int main() {
     }
     if (found) break;
   }
-  // cout << '\n';
   sort(dwarves, dwarves + 9);
-  // for (int i = 0; i < 7; i++) cout << dwarves[i] << "\n"[i == 6];
-  for (int i = 0; i < 7; i++) cout << dwarves[i] << "\n";
+  for (int i = 0; i < 7; i++) cout << dwarves[i] << '\n';
 }
