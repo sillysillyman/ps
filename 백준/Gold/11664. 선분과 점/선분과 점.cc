@@ -35,23 +35,10 @@ int main() {
   cin >> A.x >> A.y >> A.z >> B.x >> B.y >> B.z >> C.x >> C.y >> C.z;
   cout << fixed;
   cout.precision(10);
-  if (dot_product(C, A, B) >= 0 && dot_product(C, B, A) >= 0) {
-    // cout << "acute\n";
-    // cout << "AB = " << distance(A, B) << '\n';
-    // cout << "cross = " << distance({0, 0, 0}, cross_product(C, A, B)) << '\n';
-    // Point h = cross_product(C, A, B);
-
-    // h.x += A.x, h.y += A.y, h.z += A.z;
+  if (dot_product(C, A, B) >= 0 && dot_product(C, B, A) >= 0)
     cout << distance({0, 0, 0}, cross_product(C, A, B)) / distance(A, B);
-  }
-  else if (dot_product(C, A, B) < 0) {
-    // cout << "obtuse CAB\n";
+  else if (dot_product(C, A, B) < 0)
     cout << distance(A, C);
-  }
-  else if (dot_product(C, B, A)) {
-    // cout << "obtuse CBA\n";
+  else if (dot_product(C, B, A))
     cout << distance(B, C);
-  }
 }
-// 1000 2000 3000 4000 5000 6000 4500 3500 2500
-// 1000 0 0 0 1000 0 0 0 1000
