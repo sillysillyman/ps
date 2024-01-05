@@ -13,20 +13,20 @@ double distance(Point p, Point q) {
 }
 
 int dot_product(Point& p, Point& q, Point& r) {
-  Point v, w;
+  Point u, v;
 
-  v = {p.x - q.x, p.y - q.y, p.z - q.z};
-  w = {r.x - q.x, r.y - q.y, r.z - q.z};
-  return v.x * w.x + v.y * w.y + v.z * w.z;
+  u = {p.x - q.x, p.y - q.y, p.z - q.z};
+  v = {r.x - q.x, r.y - q.y, r.z - q.z};
+  return u.x * v.x + u.y * v.y + u.z * v.z;
 }
 
 Point cross_product(Point& p, Point& q, Point& r) {
-  Point v, w;
+  Point u, v;
 
-  v = {p.x - q.x, p.y - q.y, p.z - q.z};
-  w = {r.x - q.x, r.y - q.y, r.z - q.z};
-  return Point{v.y * w.z - v.z * w.y, v.z * w.x - v.x * w.z,
-               v.x * w.y - v.y * w.x};
+  u = {p.x - q.x, p.y - q.y, p.z - q.z};
+  v = {r.x - q.x, r.y - q.y, r.z - q.z};
+  return Point{u.y * v.z - u.z * v.y, u.z * v.x - u.x * v.z,
+               u.x * v.y - u.y * v.x};
 }
 
 int main() {
