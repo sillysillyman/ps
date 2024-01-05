@@ -15,6 +15,9 @@ vector<string> split(string str, char delimiter) {
 }
 
 int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+
   int T;
 
   cin >> T;
