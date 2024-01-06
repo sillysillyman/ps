@@ -14,8 +14,7 @@ int main() {
         cout << 1;
         return 0;
       }
-    }
-    else if (T.back() == 'B') {
+    } else if (T.back() == 'B') {
       T = T.substr(0, T.length() - 1);
       reverse(T.begin(), T.end());
       if (T == S) {
