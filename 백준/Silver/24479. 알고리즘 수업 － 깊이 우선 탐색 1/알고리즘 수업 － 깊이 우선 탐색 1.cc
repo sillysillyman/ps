@@ -12,7 +12,6 @@ void dfs(int src) {
   if (visited[src]) return;
   visited[src] = order;
   order++;
-//   cout << src << '\n';
   for (auto child : graph[src]) dfs(child);
 }
 
@@ -32,7 +31,5 @@ int main() {
   }
   for (int i = 1; i <= N; i++) sort(graph[i].begin(), graph[i].end());
   dfs(R);
-  for (int i = 1; i <= N; i++) {
-    cout << visited[i] << '\n';
-  }
+  for (int i = 1; i <= N; i++) cout << visited[i] << '\n';
 }
