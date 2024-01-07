@@ -23,21 +23,18 @@ int main() {
   }
   for (int k = 0; k < n; k++) {
     for (int i = 0; i < n; i++) {
-      for (int j = 0; j < n; j++) graph[i][j] = min(graph[i][j], graph[i][k] + graph[k][j]);
+      for (int j = 0; j < n; j++)
+        graph[i][j] = min(graph[i][j], graph[i][k] + graph[k][j]);
     }
   }
-//   cout << '\n';
-//   for (int i = 0; i < n; i++) {
-//     for (int j = 0; j < n; j++) cout << graph[i][j] << ' ';
-//     cout << '\n';
-//   }
+
   int max_cnt = 0;
+
   for (int i = 0; i < n; i++) {
     int cnt = 0;
 
     for (int j = 0; j < n; j++) {
-      if (graph[i][j] <= m)
-        cnt += items[j];
+      if (graph[i][j] <= m) cnt += items[j];
     }
     max_cnt = max(max_cnt, cnt);
   }
