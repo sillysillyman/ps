@@ -21,23 +21,18 @@ int main() {
     a--, b--;
     graph[a][b] = min(graph[a][b], c);
   }
-//   for (int i = 0; i < n; i++) {
-//     for (int j = 0; j < n; j++) {
-//     //   if (graph[i][j] >= MAX_COST) cout << 0 << ' ';
-//     //   else cout << graph[i][j] << ' ';
-//       cout << graph[i][j] << ' ';
-//     }
-//     cout << '\n';
-//   }
   for (int k = 0; k < n; k++) {
     for (int i = 0; i < n; i++) {
-      for (int j = 0; j < n; j++) graph[i][j] = min(graph[i][j], graph[i][k] + graph[k][j]);
+      for (int j = 0; j < n; j++)
+        graph[i][j] = min(graph[i][j], graph[i][k] + graph[k][j]);
     }
   }
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < n; j++) {
-      if (graph[i][j] >= MAX_COST) cout << 0 << ' ';
-      else cout << graph[i][j] << ' ';
+      if (graph[i][j] >= MAX_COST)
+        cout << 0 << ' ';
+      else
+        cout << graph[i][j] << ' ';
     }
     cout << '\n';
   }
