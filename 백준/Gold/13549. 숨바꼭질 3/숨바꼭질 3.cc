@@ -14,7 +14,7 @@ void bfs(int src) {
   q.push(src);
   while (!q.empty()) {
     int cur = q.front();
-    // cout << cur << ": " << times[cur] << endl;
+
     if (cur == K) {
       cout << times[cur];
       return;
@@ -40,8 +40,4 @@ int main() {
   fill(times, times + 100001, 100000);
   times[N] = 0;
   bfs(N);
-//   cout << '\n';
-//   for (int i = 0; i <= K; i++) {
-//     cout << times[i] << ' ';
-//   }
 }
