@@ -35,13 +35,7 @@ int main() {
   
   int start = 0, end = 0;
 
-//   for (auto i : primes) cout << i << ' ';
-//   cout << "\n\n";
-//   for (auto i : accumulated) cout << i << ' ';
-//   cout << "\n\n";
-
   while (end < accumulated.size()) {
-    // cout << "start: " << start << ", end: " << end << '\n';
     if (start == end) {
       if (accumulated[start] == N) cnt++;
       end++;
