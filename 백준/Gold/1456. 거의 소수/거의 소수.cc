@@ -13,8 +13,9 @@ int main() {
     }
   }
 
+  int cnt = 0;
   ll A, B;
-  ll cnt = 0;
+
   cin >> A >> B;
   for (ll i = 2; i < 10000001; i++) {
     if (!sieve[i]) continue;
