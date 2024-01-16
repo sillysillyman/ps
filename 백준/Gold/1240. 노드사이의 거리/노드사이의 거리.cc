@@ -4,19 +4,17 @@
 
 using namespace std;
 
-int visited[1001];
+bool visited[1001];
 vector<pair<int, int>> tree[1001];
 
 void bfs(int src, int dst) {
   queue<pair<int, int>> q;
 
-//   cout << "src: " << src << ", dst: " << dst << '\n';
   q.push({src, 0});
   visited[src] = true;
   while (!q.empty()) {
     auto [cur, dist] = q.front();
 
-    // cout << "cur: " << cur << ", dist: " << dist << '\n';
     if (cur == dst) {
       cout << dist << '\n';
       break;
@@ -32,6 +30,9 @@ void bfs(int src, int dst) {
 }
 
 int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+
   int N, M;
 
   cin >> N >> M;
@@ -45,7 +46,7 @@ int main() {
   for (int i = 0; i < M; i++) {
     int src, dst;
 
-    fill(visited, visited + 1001, 0);
+    fill(visited + 1, visited + N + 1, false);
     cin >> src >> dst;
     bfs(src, dst);
   }
