@@ -14,7 +14,7 @@ bool is_prime(int num) {
   return true;
 }
 
-void dfs(int prime) {  
+void dfs(int prime) {
   int num = prime;
 
   for (int i = 0; i < 10; i++) {
