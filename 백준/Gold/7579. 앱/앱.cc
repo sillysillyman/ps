@@ -17,7 +17,7 @@ int main() {
   }
   for (int i = 1; i <= N; i++) {
     for (int j = 0; j <= max_cost; j++) {
-      dp[i][j] = max(dp[i][j], dp[i - 1][j]);
+      dp[i][j] = dp[i - 1][j];
       if (j - apps[i].second >= 0) dp[i][j] = max(dp[i][j], dp[i - 1][j - apps[i].second] + apps[i].first);
     }
   }
