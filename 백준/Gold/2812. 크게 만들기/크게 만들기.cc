@@ -16,24 +16,24 @@ int main() {
   cin >> num;
   for (int i = 0; i < N; i++) {
     if (K == 0) {
-      ans = num.substr(i);
+      ans += num.substr(i);
       break;
     }
-    while (K != 0 && !s.empty() && num[i] > s.top()) {
-      s.pop();
+    while (K != 0 && !ans.empty() && num[i] > ans.back()) {
+      ans.pop_back();
       K--;
     }
-    s.push(num[i]);
-    // tmp += digit;
-    // cout << "tmp: " << tmp << endl;
+    ans.push_back(num[i]);
+    // cout << "ans: " << ans << endl;
+    // cout << "K: " << K << endl << '\n';
   }
   while (K != 0) {
-    s.pop();
+    ans.pop_back();
     K--;
   }
-  while (!s.empty()) {
-    ans = s.top() + ans;
-    s.pop();
-  }
+//   while (!s.empty()) {
+//     ans = s.top() + ans;
+//     s.pop();
+//   }
   cout << ans;
 }
