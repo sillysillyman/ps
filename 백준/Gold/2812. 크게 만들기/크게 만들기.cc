@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stack>
 
 using namespace std;
 
@@ -10,7 +9,6 @@ int main() {
   int N, K;
   string num;
   string ans;
-  stack<char> s;
 
   cin >> N >> K;
   cin >> num;
@@ -24,16 +22,10 @@ int main() {
       K--;
     }
     ans.push_back(num[i]);
-    // cout << "ans: " << ans << endl;
-    // cout << "K: " << K << endl << '\n';
   }
   while (K != 0) {
     ans.pop_back();
     K--;
   }
-//   while (!s.empty()) {
-//     ans = s.top() + ans;
-//     s.pop();
-//   }
   cout << ans;
 }
