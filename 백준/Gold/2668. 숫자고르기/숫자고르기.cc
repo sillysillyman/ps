@@ -8,16 +8,12 @@ bool visited[101];
 int arr[101];
 
 void dfs(int i, int src, int size) {
-//   cout << "i: " << i << " src: " << src << '\n';
   if (visited[i]) {
-    // cout << "size: " << size << '\n';
     if (i == src) {
       cnt += size;
-    //   cout << "cnt: " << cnt << '\n';
       found_cycle = true;
       return;
-    }
-    else {
+    } else {
       found_cycle = false;
       return;
     }
@@ -33,8 +29,7 @@ int main() {
 
   cin >> N;
   for (int i = 1; i <= N; i++) cin >> arr[i];
-  for (int i = 1; i <= N; i++) dfs(i, i, 0);;
-//   dfs(5, 5, 0);
+  for (int i = 1; i <= N; i++) dfs(i, i, 0);
   cout << cnt << '\n';
   for (int i = 1; i <= N; i++) {
     if (visited[i]) cout << i << '\n';
