@@ -50,11 +50,9 @@ int main() {
   }
   for (int i = 0; i < row; i++) {
     for (int j = 0; j < col; j++) {
+      if (!map[i][j]) continue;
       fill(&visited[0][0], &visited[row - 1][col], 0);
-      if (!visited[i][j] && map[i][j]) {
-        
-        bfs(i, j);
-      }
+      bfs(i, j);
     }
   }
   cout << max_dist - 1;
