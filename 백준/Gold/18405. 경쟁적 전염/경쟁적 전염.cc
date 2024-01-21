@@ -41,7 +41,6 @@ void bfs() {
   while (!q.empty()) {
     auto [x, y, depth] = q.front();
 
-    // cout << "(" << x << ", " << y << ")\n";
     q.pop();
     if (depth == S) continue;
     for (int i = 0; i < 4; i++) {
@@ -57,16 +56,14 @@ void bfs() {
 }
 
 int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+
   cin >> N >> K;
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < N; j++) cin >> graph[i][j];
   }
   cin >> S >> X >> Y;
   bfs();
-//   cout << '\n';
-//   for (int i = 0; i < N; i++) {
-//     for (int j = 0; j < N; j++) cout << visited[i][j] << ' ';
-//     cout << '\n';
-//   }
   cout << visited[X - 1][Y - 1];
 }
