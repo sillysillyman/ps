@@ -14,9 +14,6 @@ int main() {
     else if (success[0] && success[1] && c == 'P' && !success[3]) success[2] = true;
     else if (success[0] && success[1] && success[2] && c == 'C') success[3] = true;
   }
-//   cin.ignore();
-//   for (auto i : success) cout << i << ' ';
-//   cout << '\n';
   if (success[0] && success[1] && success[2] && success[3])
     cout << "I love UCPC";
   else
