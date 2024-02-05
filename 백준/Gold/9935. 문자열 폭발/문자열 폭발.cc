@@ -11,7 +11,7 @@ int main() {
   string bomb;
   vector<char> s;
 
-//  str.reserve(1000000);
+  str.reserve(1000000);
   cin >> str >> bomb;
 
   int len = bomb.length();
@@ -21,15 +21,14 @@ int main() {
     if (s.size() >= len) {
       string buffer = "";
 
-      for (int i = 1; i <= len; i++) {
-        buffer = s[s.size() - i] + buffer;
-      }
+      for (int i = 1; i <= len; i++) buffer = s[s.size() - i] + buffer;
       if (buffer == bomb) {
         for (int i = 0; i < len; i++) s.pop_back();
       }
     }
   }
-  if (s.empty()) cout << "FRULA";
+  if (s.empty())
+    cout << "FRULA";
   else {
     for (char letter : s) cout << letter;
   }
