@@ -18,9 +18,6 @@ int main() {
     arr[i] += arr[i - 1];
   }
 
-//   for (int i = 0; i <= N; i++) cout << arr[i] << ' ';
-//   cout << '\n';
-
   bool success = false;
   int left = 0, right = 1;
 
