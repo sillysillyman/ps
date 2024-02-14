@@ -28,12 +28,10 @@ int main() {
   sort(AB.begin(), AB.end());
   sort(CD.begin(), CD.end());
   for (int num : AB) {
-    int t = -num;
+    if (!binary_search(CD.begin(), CD.end(), -num)) continue;
 
-    if (!binary_search(CD.begin(), CD.end(), t)) continue;
-
-    int lower = lower_bound(CD.begin(), CD.end(), t) - CD.begin();
-    int upper = upper_bound(CD.begin(), CD.end(), t) - CD.begin();
+    int lower = lower_bound(CD.begin(), CD.end(), -num) - CD.begin();
+    int upper = upper_bound(CD.begin(), CD.end(), -num) - CD.begin();
 
     cnt += (upper - lower);
   }
