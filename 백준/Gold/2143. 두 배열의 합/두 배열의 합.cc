@@ -1,5 +1,5 @@
 #include <algorithm>
-#include <iostream> 
+#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -45,6 +45,7 @@ int main() {
     int t = T - num;
     int lower = lower_bound(B.begin(), B.end(), t) - B.begin();
     int upper = upper_bound(B.begin(), B.end(), t) - B.begin();
+
     cnt += (upper - lower);
   }
   cout << cnt;
