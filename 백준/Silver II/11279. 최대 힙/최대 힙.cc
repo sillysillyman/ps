@@ -3,24 +3,26 @@
 
 using namespace std;
 
-priority_queue<int> heap;
-
 int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
 
-    int N;
+  int N;
+  priority_queue<int> max_heap;
+
+  cin >> N;
+  while (N--) {
     int x;
 
-    cin >> N;
-    while (N--) {
-        cin >> x;
-        if (x == 0) {
-            if (heap.empty()) cout << 0 << '\n';
-            else {
-                cout << heap.top() << '\n';
-                heap.pop();
-            }
-        } else heap.push(x);
-    }
+    cin >> x;
+    if (x == 0) {
+      if (max_heap.empty())
+        cout << 0 << '\n';
+      else {
+        cout << max_heap.top() << '\n';
+        max_heap.pop();
+      }
+    } else
+      max_heap.push(x);
+  }
 }
