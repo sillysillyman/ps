@@ -29,15 +29,9 @@ int main() {
     } else if (command == "size")
       cout << s.size() << '\n';
     else if (command == "empty") {
-      if (s.empty())
-        cout << 1 << '\n';
-      else
-        cout << 0 << '\n';
+      cout << s.empty() << '\n';
     } else if (command == "top") {
-      if (s.empty())
-        cout << -1 << '\n';
-      else
-        cout << s.top() << '\n';
+      cout << (s.empty() ? -1 : s.top()) << '\n';
     }
   }
 }
