@@ -11,14 +11,14 @@ int main() {
 
   cin >> C;
   dp[1] = 1;
-  for (int x = 1; x <= 1000; x++) {
+  for (int x = 2; x <= 1000; x++) {
     for (int y = 1; y <= x; y++) {
       if (gcd(x, y) == 1) dp[x]++;
     }
+    dp[x] += dp[x - 1];
   }
-  for (int i = 2; i <= 1000; i++) dp[i] += dp[i - 1];
   while (C--) {
     cin >> N;
-    cout << 2 * dp[N] - 1 << '\n';
+    cout << 2 * dp[N] + 1 << '\n';
   }
 }
