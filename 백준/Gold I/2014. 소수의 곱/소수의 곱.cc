@@ -19,8 +19,7 @@ int main() {
     int num = pq.top();
 
     for (int prime : primes) {
-      if ((long long)num * prime <= ~(1 << 31))
-        pq.push(num * prime);
+      if ((long long)num * prime <= ~(1 << 31)) pq.push(num * prime);
     }
     pq.pop();
     while (pq.top() == num) pq.pop();
