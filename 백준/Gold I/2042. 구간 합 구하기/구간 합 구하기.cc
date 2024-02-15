@@ -37,6 +37,9 @@ void update(int node, int start, int end, int idx, ll diff) {
 }
 
 int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+
   int N, M, K;
   int a, b;
   ll c;
