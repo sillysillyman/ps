@@ -1,6 +1,6 @@
 #include <algorithm>
 #include <iostream>
-#include <map>
+#include <unordered_map>
 
 using namespace std;
 
@@ -25,7 +25,7 @@ int main() {
   sort(upper, upper + N / 2);
 
   int min_obstacle = 200000;
-  map<int, int> obstacles;
+  unordered_map<int, int> obstacles;
 
   for (int obstacle, h = 1; h <= H; h++) {
     obstacle = N - (lower_bound(lower, lower + N / 2, h) - lower) -
