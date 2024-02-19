@@ -7,7 +7,6 @@ long long dp[21][100];
 
 int main() {
   int N;
-  long long cnt = 0;
 
   cin >> N;
   for (int i = 0; i < N; i++) cin >> arr[i];
