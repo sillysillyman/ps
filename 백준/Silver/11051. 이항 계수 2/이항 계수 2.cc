@@ -14,7 +14,7 @@ int main() {
       if (j == 0 || j == i)
         dp[i][j] = 1;
       else
-        dp[i][j] = (dp[i - 1][j] % MOD + dp[i - 1][j - 1] % MOD) % MOD;
+        dp[i][j] = (dp[i - 1][j - 1] % MOD + dp[i - 1][j] % MOD) % MOD;
     }
   }
   cout << dp[N][K];
