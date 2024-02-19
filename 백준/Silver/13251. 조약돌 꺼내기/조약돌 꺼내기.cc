@@ -18,7 +18,7 @@ int main() {
     long long numerator = pebbles[i];
     long long denominator = total;
     double ith_prob = 1;
-    // cout << "numerator: " << numerator << " denominator: " << denominator << '\n';
+
     for (int j = 0; j < K; j++) {
       ith_prob *= ((double)numerator / denominator);
       numerator--;
