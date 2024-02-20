@@ -4,7 +4,6 @@
 
 using namespace std;
 
-bool visited[32'001];
 int indegrees[32'001];
 vector<int> orders[32'001];
 
@@ -22,22 +21,16 @@ int main() {
     orders[A].push_back(B);
   }
   for (int i = 1; i <= N; i++) {
-    if (indegrees[i] == 0) {
-      visited[i] = true;
-      q.push(i);
-    }
+    if (indegrees[i] == 0) q.push(i);
   }
-  while (!q.empty()) {
+  for (int i = 1; i <= N; i++) {
     int taller = q.front();
 
     cout << taller << ' ';
     q.pop();
     for (int shorter : orders[taller]) {
       indegrees[shorter]--;
-      if (!visited[shorter] && indegrees[shorter] == 0) {
-        visited[shorter] = true;
-        q.push(shorter);
-      }
+      if (indegrees[shorter] == 0) q.push(shorter);
     }
   }
 }
