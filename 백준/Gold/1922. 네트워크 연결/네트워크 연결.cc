@@ -23,14 +23,16 @@ void merge(int x, int y) {
   x = find(x);
   y = find(y);
   if (x == y) return;
-  if (x < y) parents[y] = x;
-  else parents[x] = y;
+  if (x < y)
+    parents[y] = x;
+  else
+    parents[x] = y;
 }
 
 int main() {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
-  
+
   int N, M;
 
   cin >> N >> M;
@@ -41,19 +43,9 @@ int main() {
     cin >> info.u >> info.v >> info.cost;
     infos.push_back(info);
   }
-//   cout << '\n';
-//   for (Info info : infos) {
-//     cout << info.cost << ' ' << info.u << ' ' << info.v << '\n';
-//   }
-//   cout << '\n';
   sort(infos.begin(), infos.end());
-//   for (Info info : infos) {
-//     cout << info.cost << ' ' << info.u << ' ' << info.v << '\n';
-//   }
-//   cout << '\n';
   for (Info info : infos) {
     if (find(info.u) == find(info.v)) continue;
-    // cout << "connect " << info.u << " and " << info.v << '\n';
     merge(info.u, info.v);
     min_cost += info.cost;
   }
