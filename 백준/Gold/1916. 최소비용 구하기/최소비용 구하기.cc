@@ -5,7 +5,6 @@ using namespace std;
 using ll = long long;
 
 const ll INF = 1'000'000'000;
-int N, M;
 ll dists[1001];
 vector<pair<int, ll>> graph[1001];
 
@@ -32,22 +31,16 @@ int main() {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
 
-  int src, dst;
+  int N, M;
+  int src, dest;
 
   cin >> N >> M;
   fill(dists + 1, dists + N + 1, INF);
-  for (int cost, i = 0; i < M; i++) {
-    cin >> src >> dst >> cost;
-    graph[src].push_back({dst, cost});
+  for (int dist, i = 0; i < M; i++) {
+    cin >> src >> dest >> dist;
+    graph[src].push_back({dest, dist});
   }
-  cin >> src >> dst;
+  cin >> src >> dest;
   dijkstra(src);
-  // for (int k = 1; k <= N; k++) {
-  //   for (int i = 1; i <= N; i++) {
-  //     for (int j = 1; j <= N; j++) {
-  //       costs[i][j] = min(costs[i][j], costs[i][k] + costs[k][j]);
-  //     }
-  //   }
-  // }
-  cout << dists[dst];
+  cout << dists[dest];
 }
