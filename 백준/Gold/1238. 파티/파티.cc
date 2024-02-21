@@ -57,10 +57,7 @@ int main() {
     backward_graph[dest].push_back({src, t});
   }
   dijkstra(X);
-//   cout << '\n';
-//   for (int i = 1; i <= N; i++) cout << times[i][0] << ' ';
-//   cout << '\n';
-//   for (int i = 1; i <= N; i++) cout << times[i][1] << ' ';
+
   int max_time = 0;
 
   for (int i = 1; i <= N; i++)
