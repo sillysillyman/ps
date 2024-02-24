@@ -4,7 +4,7 @@
 using namespace std;
 
 int parents[51];
-vector<int> knows_truth;
+vector<int> know_truth;
 
 int find(int x) {
   if (parents[x] == x) return x;
@@ -40,13 +40,13 @@ int main() {
   for (int first_person, i = 0; i < M; i++) {
     cin >> people;
     cin >> first_person;
-    knows_truth.push_back(first_person);
+    know_truth.push_back(first_person);
     for (int person, j = 1; j < people; j++) {
       cin >> person;
       merge(first_person, person);
     }
   }
-  for (int person : knows_truth) {
+  for (int person : know_truth) {
     if (find(person) != 0) cnt++;
   }
   cout << cnt;
