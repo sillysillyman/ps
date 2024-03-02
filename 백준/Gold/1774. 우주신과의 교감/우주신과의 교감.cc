@@ -48,7 +48,7 @@ int main() {
   cin >> N >> M;
   for (int i = 1; i <= N; i++) {
     long long X, Y;
-    
+
     cin >> X >> Y;
     points.push_back({i, X, Y});
   }
