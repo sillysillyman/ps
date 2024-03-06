@@ -15,9 +15,7 @@ vector<Edge> edges;
 bool bellman_ford() {
   for (int i = 1; i <= N; i++) {
     for (auto edge : edges) {
-      int from = edge.from;
-      int to = edge.to;
-      int dist = edge.dist;
+      auto [from, to, dist] = edge;
 
       if (dists[to] > dists[from] + dist) {
         dists[to] = dists[from] + dist;
@@ -50,13 +48,9 @@ int main() {
       cin >> S >> E >> T;
       edges.push_back({S, E, -T});
     }
-    // cout << '\n';
-    // for (int i = 1; i <= N; i++) cout << dists[i] << ' ';
-    // cout << '\n';
-    
-    if (bellman_ford()) cout << "YES\n";
-    else cout << "NO\n";
-    // for (int i = 1; i <= N; i++) cout << dists[i] << ' ';
-    // cout << '\n';
+    if (bellman_ford())
+      cout << "YES\n";
+    else
+      cout << "NO\n";
   }
 }
