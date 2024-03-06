@@ -11,7 +11,6 @@ struct Pos {
 };
 
 int N;
-pair<int, int> dirs[4] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 bool visited[101][101];
 bool board[101][101];
 queue<pair<int, char>> cmds;
@@ -46,27 +45,28 @@ int main() {
     auto [x, y] = snake.front();
 
     visited[x][y] = true;
-    // cout << '\n';
-    // cout << "timer: " << timer << '\n';
-    // for (int i = 1; i <= N; i++) {
-    //   for (int j = 1; j <= N; j++) cout << !!visited[i][j] << ' ';
-    //   cout << '\n';
-    // }
-    // cout << '\n';
     if (!cmds.empty()) {
       auto [time, cmd] = cmds.front();
 
       if (time == timer) {
         if (cmd == 'L') {
-          if (dir == Pos{-1, 0}) dir = {0, -1};
-          else if (dir == Pos{0, -1}) dir = {1, 0};
-          else if (dir == Pos{0, 1}) dir = {-1, 0};
-          else if (dir == Pos{1, 0}) dir = {0, 1};
+          if (dir == Pos{-1, 0})
+            dir = {0, -1};
+          else if (dir == Pos{0, -1})
+            dir = {1, 0};
+          else if (dir == Pos{0, 1})
+            dir = {-1, 0};
+          else if (dir == Pos{1, 0})
+            dir = {0, 1};
         } else if (cmd == 'D') {
-          if (dir == Pos{-1, 0}) dir = {0, 1};
-          else if (dir == Pos{0, -1}) dir = {-1, 0};
-          else if (dir == Pos{0, 1}) dir = {1, 0};
-          else if (dir == Pos{1, 0}) dir = {0, -1};
+          if (dir == Pos{-1, 0})
+            dir = {0, 1};
+          else if (dir == Pos{0, -1})
+            dir = {-1, 0};
+          else if (dir == Pos{0, 1})
+            dir = {1, 0};
+          else if (dir == Pos{1, 0})
+            dir = {0, -1};
         }
         cmds.pop();
       }
@@ -81,7 +81,8 @@ int main() {
     } else {
       visited[nx][ny] = true;
       snake.push_front({nx, ny});
-      if (board[nx][ny]) board[nx][ny] = false;
+      if (board[nx][ny])
+        board[nx][ny] = false;
       else {
         visited[snake.back().x][snake.back().y] = false;
         snake.pop_back();
