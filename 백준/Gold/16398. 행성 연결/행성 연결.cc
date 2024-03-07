@@ -33,6 +33,7 @@ int main() {
   cin.tie(NULL);
 
   int N;
+  ll min_total_cost = 0;
 
   cin >> N;
   for (int i = 0; i < N; i++) parents[i] = i;
@@ -46,13 +47,10 @@ int main() {
   }
   sort(edges.begin(), edges.end(),
        [](Edge& u, Edge& v) { return u.cost < v.cost; });
-
-  long long total_cost = 0;
-
   for (auto& edge : edges) {
     if (find(edge.from) == find(edge.to)) continue;
     merge(find(edge.from), find(edge.to));
-    total_cost += edge.cost;
+    min_total_cost += edge.cost;
   }
-  cout << total_cost;
+  cout << min_total_cost;
 }
