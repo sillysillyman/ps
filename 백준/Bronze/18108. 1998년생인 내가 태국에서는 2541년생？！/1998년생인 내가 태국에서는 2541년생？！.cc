@@ -3,8 +3,8 @@
 using namespace std;
 
 int main() {
-    int BE;
+  int y;
 
-    cin >> BE;
-    cout << BE - 543;
+  cin >> y;
+  cout << y - 543;
 }
