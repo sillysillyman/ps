@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int sieve[4000001];
+bool sieve[4000001];
 vector<int> primes;
 vector<int> accumulated;
 
@@ -11,7 +11,7 @@ int main() {
   int N;
   int cnt = 0;
 
-  fill(sieve + 2, sieve + 4000001, 1);
+  fill(sieve + 2, sieve + 4000001, true);
   cin >> N;
   if (N == 1) {
     cout << 0;
@@ -22,34 +22,28 @@ int main() {
   }
   for (int i = 2; i <= N; i++) {
     if (sieve[i]) {
-      for (int j = 2; i * j <= N; j++) sieve[i * j] = 0;
+      primes.push_back(i);
+      for (int j = 2; i * j <= N; j++) sieve[i * j] = false;
     }
   }
-  for (int i = 2; i <= N; i++) {
-    if (sieve[i]) primes.push_back(i);
-  }
-  for (int i = 0; i < primes.size(); i++) {
-    if (i == 0) accumulated.push_back(primes[i]);
-    else accumulated.push_back(accumulated[i - 1] + primes[i]);
-  }
+  accumulated.push_back(0);
+  for (int i = 0; i < primes.size(); i++)
+    accumulated.push_back(accumulated[i] + primes[i]);
   
-  int start = 0, end = 0;
+  int left = 0, right = 1;
 
-  while (end < accumulated.size()) {
-    if (start == end) {
-      if (accumulated[start] == N) cnt++;
-      end++;
+  while (left < right && right < accumulated.size()) {
+    int diff = accumulated[right] - accumulated[left];
+
+    if (diff == N) {
+      cnt++;
+      if (right - left == 1) right++;
+      left++;
     }
-    else {
-      if (accumulated[end] - accumulated[start] == N) {
-        cnt++;
-        start++;
-      }
-      else if (accumulated[end] - accumulated[start] < N) end++;
-      else if (accumulated[end] - accumulated[start] > N) {
-        start++;
-        end = start;
-      }
+    else if (diff < N) right++;
+    else if (diff > N) {
+      if (right - left == 1) right++;
+      left++;
     }
   }
   cout << cnt;
