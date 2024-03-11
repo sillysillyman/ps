@@ -49,8 +49,7 @@ int main() {
   int N, M, X;
 
   cin >> N >> M >> X;
-  fill(&times[0][0], &times[N + 1][0], INF);
-  fill(&times[0][1], &times[N + 1][1], INF);
+  fill(&times[1][0], &times[N][2], INF);
   for (int src, dest, t, i = 0; i < M; i++) {
     cin >> src >> dest >> t;
     graph[src].push_back({dest, t});
