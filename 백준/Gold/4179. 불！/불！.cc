@@ -19,11 +19,11 @@ bool bfs() {
   queue<tuple<int, int, bool, int>> q;
 
   for (auto fire : fires) {
-    q.push({fire.first, fire.second, true, -1});
     visited[fire.first][fire.second] = -1;
+    q.push({fire.first, fire.second, true, -1});
   }
-  q.push({start.first, start.second, false, 1});
   visited[start.first][start.second] = 1;
+  q.push({start.first, start.second, false, 1});
   while (!q.empty()) {
     auto [x, y, is_fire, time] = q.front();
 
