@@ -1,18 +1,19 @@
 #include <iostream>
+#include <numeric>
 
 using namespace std;
 
-int gcd(int a, int b) {
-    return b ? gcd(b, a%b) : a;
-}
-
 int main() {
-    int T;
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+
+  int T;
+
+  cin >> T;
+  while (T--) {
     int A, B;
 
-    cin >> T;
-    while (T--) {
-        cin >> A >> B;
-        cout << A*B/gcd(A, B) << '\n';
-    }
+    cin >> A >> B;
+    cout << lcm(A, B) << '\n';
+  }
 }
