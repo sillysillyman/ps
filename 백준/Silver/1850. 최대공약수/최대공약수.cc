@@ -1,18 +1,16 @@
 #include <iostream>
+#include <numeric>
 
 using namespace std;
-
-typedef long long ll;
-
-ll gcd(ll a, ll b) {
-    if (b == 0) return a;
-    return gcd(b, a%b);
-}
+using ll = long long;
 
 int main() {
-    ll A, B, C;
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
 
-    cin >> A >> B;
-    C = gcd(A, B);
-    while (C--) cout << 1;
+  ll A, B, C;
+
+  cin >> A >> B;
+  C = gcd(A, B);
+  while (C--) cout << 1;
 }
