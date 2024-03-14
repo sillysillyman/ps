@@ -1,32 +1,26 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <numeric>
 
 using namespace std;
 
-int get_gcd(int a, int b) {
-    if (a < b) swap(a, b);
-    if (a%b == 0) return b;
-    else return get_gcd(b, a%b);
-}
+int arr[100'000];
 
 int main() {
-    int N;
-    int gcd;
-    int cnt = 0;
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
 
-    cin >> N;
+  int N, min_gap, cnt = 0;
 
-    vector<int> trees(N);
-    vector<int> diff(N - 1);
+  cin >> N;
 
-    for (int i = 0; i < N; i++) cin >> trees[i];
-    sort(trees.begin(), trees.end());
-    for (int i = 0; i < N - 1; i++) {
-        diff[i] = trees[i + 1] - trees[i];
-        if (i == 0) gcd = diff[i];
-        else gcd = get_gcd(gcd, diff[i]);
-    }
-    for (int i = 0; i < N - 1; i++) cnt += diff[i]/gcd - 1;
-    cout << cnt;
+  for (int i = 0; i < N; i++) cin >> arr[i];
+  min_gap = arr[1] - arr[0];
+  for (int i = 1; i < N - 1; i++) min_gap = gcd(min_gap, arr[i + 1] - arr[i]);
+  for (int i = 0; i < N - 1; i++) {
+    if (int gap = arr[i + 1] - arr[i]; gap == min_gap)
+      continue;
+    else
+      cnt += gap / min_gap - 1;
+  }
+  cout << cnt;
 }
