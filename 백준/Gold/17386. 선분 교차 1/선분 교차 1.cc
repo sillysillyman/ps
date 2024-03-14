@@ -26,9 +26,6 @@ int main() {
 
   cin >> L1.p.x >> L1.p.y >> L1.q.x >> L1.q.y;
   cin >> L2.p.x >> L2.p.y >> L2.q.x >> L2.q.y;
-  if (ccw(L1.p, L1.q, L2.p) * ccw(L1.p, L1.q, L2.q) < 0 &&
-      ccw(L2.p, L2.q, L1.p) * ccw(L2.p, L2.q, L1.q) < 0)
-    cout << 1;
-  else
-    cout << 0;
+  cout << (ccw(L1.p, L1.q, L2.p) * ccw(L1.p, L1.q, L2.q) < 0 &&
+           ccw(L2.p, L2.q, L1.p) * ccw(L2.p, L2.q, L1.q) < 0);
 }
