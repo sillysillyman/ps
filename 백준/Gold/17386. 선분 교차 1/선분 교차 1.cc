@@ -12,13 +12,10 @@ struct Line {
 };
 
 int ccw(Point p, Point q, Point r) {
-  if (ll cross_product = (q.x - p.x) * (r.y - p.y) - (r.x - p.x) * (q.y - p.y);
-      cross_product > 0)
-    return 1;
-  else if (cross_product < 0)
-    return -1;
-  else
-    return 0;
+  ll cross_product = (q.x - p.x) * (r.y - p.y) - (r.x - p.x) * (q.y - p.y);
+
+  if (cross_product) return cross_product / abs(cross_product);
+  return 0;
 }
 
 int main() {
