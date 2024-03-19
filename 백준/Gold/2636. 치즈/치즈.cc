@@ -60,7 +60,7 @@ int main() {
           int nx = x + dx[i];
           int ny = y + dy[i];
 
-          if (is_inside(nx, ny) && graph[nx][ny].second) cnt++;
+          if (graph[nx][ny].second) cnt++;
         }
         if (cnt) borders.push({x, y});
       }
