@@ -7,7 +7,7 @@ int R, C;
 int dx[4] = {-1, 0, 0, 1};
 int dy[4] = {0, -1, 1, 0};
 bool visited[100][100];
-pair<int, bool> graph[100][100];
+pair<bool, bool> graph[100][100];
 
 bool is_inside(int x, int y) { return 0 <= x && x < R && 0 <= y && y < C; }
 
@@ -52,10 +52,9 @@ int main() {
     bfs(0, 0);
     for (int x = 0; x < R; x++) {
       for (int y = 0; y < C; y++) {
-        if (!graph[x][y].first) continue;
-
         int cnt = 0;
 
+        if (!graph[x][y].first) continue;
         for (int i = 0; i < 4; i++) {
           int nx = x + dx[i];
           int ny = y + dy[i];
@@ -73,7 +72,7 @@ int main() {
     while (!borders.empty()) {
       auto [x, y] = borders.front();
 
-      graph[x][y].first = 0;
+      graph[x][y].first = false;
       borders.pop();
     }
     time++;
