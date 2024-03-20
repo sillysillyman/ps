@@ -1,5 +1,6 @@
 #include <iostream>
 #include <map>
+#include <numeric>
 
 using namespace std;
 
@@ -13,8 +14,6 @@ struct Point {
 
 Point points[1500];
 
-int gcd(int a, int b) { return b == 0 ? a : gcd(b, a % b); }
-
 int main() {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
@@ -23,13 +22,7 @@ int main() {
   int cnt = 0;
 
   cin >> N;
-  for (int i = 0; i < N; i++) {
-    int divisor;
-    Point point;
-
-    cin >> point.x >> point.y;
-    points[i] = point;
-  }
+  for (int i = 0; i < N; i++) cin >> points[i].x >> points[i].y;
   for (int i = 0; i < N; i++) {
     map<Point, int> vectors;
 
