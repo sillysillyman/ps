@@ -4,20 +4,18 @@
 #include <vector>
 
 using namespace std;
-using ll = long long;
-using ld = long double;
 
 struct Point {
-  ll x, y;
+  int x, y;
 };
 
 Point points[1000];
 vector<Point> convex_hull;
 
-ld magnitude(Point p) { return sqrt(p.x * p.x + p.y * p.y); }
+double magnitude(Point p) { return sqrt(p.x * p.x + p.y * p.y); }
 
 int ccw(Point p, Point q, Point r) {
-  if (ll cross_product = (q.x - p.x) * (r.y - p.y) - (r.x - p.x) * (q.y - p.y);
+  if (int cross_product = (q.x - p.x) * (r.y - p.y) - (r.x - p.x) * (q.y - p.y);
       cross_product)
     return cross_product / abs(cross_product);
   return 0;
@@ -63,7 +61,7 @@ int main() {
   convex_hull.push_back(convex_hull.front());
 
   int size = convex_hull.size();
-  ld perimeter = 0;
+  double perimeter = 0;
 
   perimeter += 2 * L * M_PI;
   for (int i = 0; i < size - 1; i++) {
