@@ -23,9 +23,8 @@ int main() {
         if (cursor != pwd.end()) cursor++;
       } else if (log == '-') {
         if (!pwd.empty() && cursor != pwd.begin()) cursor = pwd.erase(--cursor);
-      } else {
+      } else
         pwd.insert(cursor, log);
-      }
     }
     for (auto letter : pwd) cout << letter;
     cout << '\n';
