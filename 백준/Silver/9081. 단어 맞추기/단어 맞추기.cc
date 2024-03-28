@@ -8,14 +8,11 @@ int main() {
 
   cin >> T;
   while (T--) {
-    bool next_word = false;
-    string word;
-    string prev_word;
+    string word, next_word;
 
     cin >> word;
-    prev_word = word;
-    next_permutation(word.begin(), word.end());
-    if (word < prev_word) cout << prev_word << '\n';
-    else cout << word << '\n';
+    next_word = word;
+    next_permutation(next_word.begin(), next_word.end());
+    cout << (word < next_word ? next_word : word) << '\n';
   }
 }
