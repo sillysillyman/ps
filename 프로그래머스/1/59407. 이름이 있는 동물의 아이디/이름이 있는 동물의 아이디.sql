@@ -3,6 +3,6 @@ SELECT
 FROM
 	animal_ins
 WHERE
-	NAME IS NOT NULL
+	name IS NOT NULL
 ORDER BY
 	animal_id
