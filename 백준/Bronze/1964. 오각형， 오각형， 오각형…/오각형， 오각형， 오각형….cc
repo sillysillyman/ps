@@ -5,13 +5,8 @@ using namespace std;
 const int MOD = 45'678;
 
 int main() {
-  int N, cnt = 5, diff = 7;
+  long long N;
 
   cin >> N;
-  for (int i = 2; i <= N; i++) {
-    cnt += diff;
-    cnt %= MOD;
-    diff += 3;
-  }
-  cout << cnt;
+  cout << (5 + (N - 1) + 3 * (N - 1) * (N + 2) / 2) % MOD;
 }
