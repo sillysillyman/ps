@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <iostream>
 #include <queue>
 #include <vector>
@@ -10,7 +9,6 @@ const ll INF = 10'000'000'000;
 int src, dest;
 int from[1001];
 ll costs[1001];
-vector<int> path;
 vector<pair<int, ll>> graph[1001];
 
 void dijkstra(int src) {
@@ -34,12 +32,6 @@ void dijkstra(int src) {
   }
 }
 
-void get_reversed_path(int curr) {
-  path.push_back(curr);
-  if (curr == src) return;
-  get_reversed_path(from[curr]);
-}
-
 int main() {
   int n, m;
 
@@ -53,8 +45,11 @@ int main() {
   }
   cin >> src >> dest;
   dijkstra(src);
-  get_reversed_path(dest);
-  reverse(path.begin(), path.end());
-  cout << costs[dest] << '\n' << path.size() << '\n';
-  for (int& node : path) cout << node << ' ';
+
+  vector<int> reversed_path;
+
+  for (int i = dest; i != 0; i = from[i]) reversed_path.push_back(i);
+  cout << costs[dest] << '\n' << reversed_path.size() << '\n';
+  for (auto node = reversed_path.rbegin(); node != reversed_path.rend(); node++)
+    cout << *node << ' ';
 }
