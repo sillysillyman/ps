@@ -1,10 +1,9 @@
 #include <iostream>
-#include <numeric>
 
 using namespace std;
 
 const int MOD = 1'000'000'007;
-long long dp[1'000][1'000];
+int dp[1'000][1'000];
 
 int main() {
   ios_base::sync_with_stdio(false);
@@ -20,11 +19,24 @@ int main() {
     for (int j = 0; j < M; j++) {
       if (!dp[i][j]) continue;
       dp[i][j] = 0;
-      if (j > 0) dp[i][j] += dp[i + 1][j - 1];
+      if (j > 0) {
+        dp[i][j] += dp[i + 1][j - 1];
+        dp[i][j] %= MOD;
+      }
       dp[i][j] += dp[i + 1][j];
-      if (j < M - 1) dp[i][j] += dp[i + 1][j + 1];
       dp[i][j] %= MOD;
+      if (j < M - 1) {
+        dp[i][j] += dp[i + 1][j + 1];
+        dp[i][j] %= MOD;
+      }
     }
   }
-  cout << (accumulate(&dp[0][0], &dp[0][M], 0LL)) % MOD;
+
+  int sum = 0;
+
+  for (int j = 0; j < M; j++) {
+    sum += dp[0][j];
+    sum %= MOD;
+  }
+  cout << sum;
 }
