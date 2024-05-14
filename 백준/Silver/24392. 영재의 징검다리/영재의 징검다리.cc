@@ -19,16 +19,9 @@ int main() {
     for (int j = 0; j < M; j++) {
       if (!dp[i][j]) continue;
       dp[i][j] = 0;
-      if (j > 0) {
-        dp[i][j] += dp[i + 1][j - 1];
-        dp[i][j] %= MOD;
-      }
-      dp[i][j] += dp[i + 1][j];
-      dp[i][j] %= MOD;
-      if (j < M - 1) {
-        dp[i][j] += dp[i + 1][j + 1];
-        dp[i][j] %= MOD;
-      }
+      if (j > 0) dp[i][j] = (dp[i][j] + dp[i + 1][j - 1]) % MOD;
+      dp[i][j] = (dp[i][j] + dp[i + 1][j]) % MOD;
+      if (j < M - 1) dp[i][j] = (dp[i][j] + dp[i + 1][j + 1]) % MOD;
     }
   }
 
