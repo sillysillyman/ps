@@ -1,16 +1,16 @@
-#include <iostream>
+#include <cstdio>
 
 using namespace std;
 
 int main() {
   int N, sum = 0;
 
-  cin >> N;
+  scanf("%d", &N);
   while (N--) {
     int A;
 
-    cin >> A;
+    scanf("%d", &A);
     sum += 180 * A;
   }
-  cout << sum - 360;
+  printf("%d", sum - 360);
 }
