@@ -7,12 +7,11 @@ int main() {
   cin.tie(nullptr);
 
   int N, odd_cnt = 0, even_cnt = 0;
+  string num;
 
   cin >> N;
-  while (N--) {
-    char digit;
-
-    cin >> digit;
+  cin >> num;
+  for (char& digit : num) {
     if ((digit - '0') & 1)
       ++odd_cnt;
     else
