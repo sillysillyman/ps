@@ -6,13 +6,13 @@ using namespace std;
 
 int solution(int k, vector<int> tangerine) {
   int answer = 0;
-  priority_queue<pair<int, int>> pq;
+  priority_queue<int> pq;
   map<int, int> cnts;
 
-  for (int& size : tangerine) cnts[size]++;
-  for (auto& [size, cnt] : cnts) pq.push({cnt, size});
+  for (int& size : tangerine) ++cnts[size];
+  for (auto& [size, cnt] : cnts) pq.push(cnt);
   while (k > 0) {
-    k -= pq.top().first;
+    k -= pq.top();
     pq.pop();
     ++answer;
   }
