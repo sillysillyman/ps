@@ -1,8 +1,6 @@
 #include <cmath>
 #include <cstdio>
 
-using namespace std;
-
 int arr[1'000];
 
 int main() {
