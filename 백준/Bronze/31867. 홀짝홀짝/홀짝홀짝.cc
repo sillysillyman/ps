@@ -12,8 +12,5 @@ int main() {
 
   cin >> N >> num;
   for (int i = 0; i < N; i++) odd_cnt += (num[i] - '0') & 1;
-
-  int even_cnt = N - odd_cnt;
-
-  cout << (odd_cnt == even_cnt ? -1 : (odd_cnt < even_cnt ? 0 : 1));
+  cout << (2 * odd_cnt == N ? -1 : (2 * odd_cnt < N ? 0 : 1));
 }
