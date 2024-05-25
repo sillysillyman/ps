@@ -1,8 +1,8 @@
 #include <cstdio>
 
 int main() {
-  char start;
+  char ch;
 
-  scanf("%c", &start);
-  printf("%d", ('I' > start ? 'I' - start : start - 'I') + 84);
+  scanf("%c", &ch);
+  printf("%d", ('I' > ch ? 'I' - ch : ch - 'I') + 84);
 }
