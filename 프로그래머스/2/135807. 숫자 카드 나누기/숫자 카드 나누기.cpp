@@ -3,8 +3,14 @@
 
 using namespace std;
 
+bool is_any_divisible(vector<int>& array, int divisor) {
+  for (int num : array) {
+    if (num % divisor == 0) return true;
+  }
+  return false;
+}
+
 int solution(vector<int> arrayA, vector<int> arrayB) {
-  bool is_any_divisible;
   int answer = 0;
   int gcdA, gcdB;
 
@@ -12,21 +18,7 @@ int solution(vector<int> arrayA, vector<int> arrayB) {
   gcdB = arrayB[0];
   for (int num : arrayA) gcdA = gcd(gcdA, num);
   for (int num : arrayB) gcdB = gcd(gcdB, num);
-  is_any_divisible = false;
-  for (int num : arrayB) {
-    if (!(num % gcdA)) {
-      is_any_divisible = true;
-      break;
-    }
-  }
-  if (!is_any_divisible) answer = gcdA;
-  is_any_divisible = false;
-  for (int num : arrayA) {
-    if (!(num % gcdB)) {
-      is_any_divisible = true;
-      break;
-    }
-  }
-  if (!is_any_divisible) answer = max(answer, gcdB);
+  if (!is_any_divisible(arrayB, gcdA)) answer = gcdA;
+  if (!is_any_divisible(arrayA, gcdB)) answer = max(answer, gcdB);
   return answer;
 }
