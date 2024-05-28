@@ -1,21 +1,22 @@
-#include <algorithm>
-#include <iostream>
+#include <cstdio>
 
 using namespace std;
 
 int main() {
-  ios_base::sync_with_stdio(false);
-  cin.tie(nullptr);
-
   int T;
 
-  cin >> T;
+  scanf("%d", &T);
   while (T--) {
-    string X;
+    int X;
+    int cnt = 0;
+    int digits[10] = {};
 
-    cin >> X;
-    sort(X.begin(), X.end());
-    X.erase(unique(X.begin(), X.end()), X.end());
-    cout << X.length() << '\n';
+    scanf("%d", &X);
+    while (X) {
+      digits[X % 10] = 1;
+      X /= 10;
+    }
+    for (int i = 0; i < 10; i++) cnt += digits[i];
+    printf("%d\n", cnt);
   }
 }
