@@ -18,7 +18,7 @@ class Solution {
 
         for (int count : counts) {
             k -= count;
-            answer++;
+            ++answer;
             if (k <= 0) {
                 break;
             }
