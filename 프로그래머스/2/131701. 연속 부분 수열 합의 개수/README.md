@@ -1,10 +1,10 @@
 # [level 2] 연속 부분 수열 합의 개수 - 131701 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131701?language=cpp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131701?language=java) 
 
 ### 성능 요약
 
-메모리: 7.25 MB, 시간: 65.12 ms
+메모리: 138 MB, 시간: 167.44 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 05월 29일 17:27:44
+2024년 05월 29일 18:10:56
 
 ### 문제 설명
 
