@@ -8,11 +8,11 @@ int solution(vector<int> elements) {
   vector<int> consecutive_sums;
 
   for (int i = 0; i < size; i++) elements.push_back(elements[i]);
-  for (int i = 1; i <= size; i++) {
-    for (int j = 0; j < size; j++) {
-      int sum = 0;
+  for (int i = 0; i < size; i++) {
+    int sum = 0;
 
-      for (int k = 0; k < i; k++) sum += elements[j + k];
+    for (int j = 0; j < size; j++) {
+      sum += elements[i + j];
       consecutive_sums.push_back(sum);
     }
   }
