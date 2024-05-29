@@ -1,23 +1,22 @@
-#include <stack>
 #include <string>
 #include <vector>
 
 using namespace std;
 
 bool has_right_parenthes_pair(string s) {
-  stack<char> stack;
+  vector<char> stack;
 
   for (char& ch : s) {
     if (ch == '(' || ch == '{' || ch == '[')
-      stack.push(ch);
+      stack.push_back(ch);
     else {
       if (stack.empty()) return false;
-      if (ch == ')' && stack.top() == '(')
-        stack.pop();
-      else if (ch == '}' && stack.top() == '{')
-        stack.pop();
-      else if (ch == ']' && stack.top() == '[')
-        stack.pop();
+      if (ch == ')' && stack.back() == '(')
+        stack.pop_back();
+      else if (ch == '}' && stack.back() == '{')
+        stack.pop_back();
+      else if (ch == ']' && stack.back() == '[')
+        stack.pop_back();
       else
         return false;
     }
