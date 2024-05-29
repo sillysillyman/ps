@@ -3,7 +3,7 @@
 
 using namespace std;
 
-bool has_right_parenthes_pair(string s) {
+bool has_right_parentheses_pair(string s) {
   vector<char> stack;
 
   for (char& ch : s) {
@@ -28,7 +28,7 @@ int solution(string s) {
   int answer = 0;
 
   for (int i = 1; i <= s.size(); i++) {
-    if (has_right_parenthes_pair(s.substr(i, s.size() - i) + s.substr(0, i)))
+    if (has_right_parentheses_pair(s.substr(i, s.size() - i) + s.substr(0, i)))
       ++answer;
   }
   return answer;
