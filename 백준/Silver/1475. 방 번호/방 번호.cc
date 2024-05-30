@@ -1,5 +1,5 @@
 #include <algorithm>
-#include <iostream>
+#include <cstdio>
 
 using namespace std;
 
@@ -8,7 +8,7 @@ int digits[10];
 int main() {
   int N;
 
-  cin >> N;
+  scanf("%d", &N);
   while (N) {
     int digit = N % 10;
 
@@ -22,5 +22,5 @@ int main() {
     }
     N /= 10;
   }
-  cout << *max_element(digits, digits + 10);
+  printf("%d", *max_element(digits, digits + 10));
 }
