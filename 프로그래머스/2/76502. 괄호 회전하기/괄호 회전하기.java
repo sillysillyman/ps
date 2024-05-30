@@ -32,7 +32,7 @@ public class Solution {
         int answer = 0;
         int len = s.length();
 
-        for (int i = 0; i < len - 1; i++) {
+        for (int i = 0; i < len; i++) {
             if (hasMatchingParentheses(s.substring(i) + s.substring(0, i))) {
                 ++answer;
             }
