@@ -5,6 +5,19 @@ using namespace std;
 
 string words[100];
 
+bool is_palindrome(string word) {
+  bool ret = true;
+  int size = word.size();
+
+  for (int i = 0; i < size / 2; i++) {
+    if (word[i] != word[size - i - 1]) {
+      ret = false;
+      break;
+    }
+  }
+  return ret;
+}
+
 int main() {
   ios_base::sync_with_stdio(false);
   cin.tie(nullptr);
@@ -21,13 +34,9 @@ int main() {
     for (int i = 0; i < k; i++) {
       for (int j = 0; j < k; j++) {
         if (i == j) continue;
-
-        string palindrome = words[i] + words[j];
-        reverse(palindrome.begin(), palindrome.end());
-
-        if (words[i] + words[j] == palindrome) {
+        if (is_palindrome(words[i] + words[j])) {
           found = true;
-          cout << palindrome << '\n';
+          cout << words[i] + words[j] << '\n';
           break;
         }
       }
