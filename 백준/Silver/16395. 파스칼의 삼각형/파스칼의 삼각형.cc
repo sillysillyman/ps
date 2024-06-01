@@ -1,15 +1,20 @@
-#include <iostream>
+#include <cstdio>
 
 using namespace std;
 
-int combination(int n, int k) {
-  if (n == k || k == 0) return 1;
-  return combination(n - 1, k - 1) + combination(n - 1, k);
-}
+int dp[31][31];
 
 int main() {
   int n, k;
 
-  cin >> n >> k;
-  cout << combination(n - 1, k - 1);
+  scanf("%d %d", &n, &k);
+  for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= i; j++) {
+      if (j == 1 || j == i)
+        dp[i][j] = 1;
+      else
+        dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];
+    }
+  }
+  printf("%d", dp[n][k]);
 }
