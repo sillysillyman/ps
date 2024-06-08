@@ -1,25 +1,20 @@
-#include <iostream>
-
-using namespace std;
+#include <cstdio>
 
 int main() {
-  ios_base::sync_with_stdio(false);
-  cin.tie(nullptr);
-
   int N;
 
-  cin >> N;
+  scanf("%d", &N);
   while (N--) {
     int M;
 
-    cin >> M;
+    scanf("%d", &M);
     if (M == 300)
-      cout << 1 << ' ';
+      printf("1 ");
     else if (275 <= M)
-      cout << 2 << ' ';
+      printf("2 ");
     else if (250 <= M)
-      cout << 3 << ' ';
+      printf("3 ");
     else
-      cout << 4 << ' ';
+      printf("4 ");
   }
 }
