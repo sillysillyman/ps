@@ -5,6 +5,6 @@ int main() {
 
   scanf("%d", &N);
 
-  int cnt = (N - 1) / 9 + 1;
-  printf("%d", cnt + (!(cnt & 1) && N & 1));
+  int cnt = ~-N / 9 + 1;
+  printf("%d", cnt + (!(cnt & 1) * N & 1));
 }
