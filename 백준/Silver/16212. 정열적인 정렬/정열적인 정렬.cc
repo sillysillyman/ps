@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int arr[1'000];
+int arr[500'000];
 
 int main() {
   int N;
