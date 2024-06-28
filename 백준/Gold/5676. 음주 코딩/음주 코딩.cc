@@ -56,7 +56,6 @@ int main() {
 
         cin >> i >> V;
         if (V) V /= abs(V);
-        arr[i] = V;
         update(1, 1, N, i, V);
       } else if (cmd == 'P') {
         int j;
