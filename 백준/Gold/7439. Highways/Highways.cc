@@ -1,5 +1,5 @@
 #include <algorithm>
-#include <iostream>
+#include <cstdio>
 #include <vector>
 
 using namespace std;
@@ -37,25 +37,22 @@ int distance_squared(Node& a, Node& b) {
 }
 
 int main() {
-  ios_base::sync_with_stdio(false);
-  cin.tie(nullptr);
-
   int N, M;
   vector<pair<int, int>> connected;
 
-  cin >> N;
+  scanf("%d", &N);
   for (int i = 1; i <= N; i++) parents[i] = i;
   for (int i = 1; i <= N; i++) {
     int x, y;
 
-    cin >> x >> y;
+    scanf("%d %d", &x, &y);
     nodes.push_back(Node{i, x, y});
   }
-  cin >> M;
+  scanf("%d", &M);
   while (M--) {
     int node1, node2;
 
-    cin >> node1 >> node2;
+    scanf("%d %d", &node1, &node2);
     merge(node1, node2);
   }
   for (int i = 0; i < N; i++) {
@@ -72,5 +69,5 @@ int main() {
     connected.push_back({from, to});
     merge(from, to);
   }
-  for (auto& [from, to] : connected) cout << from << ' ' << to << '\n';
+  for (auto& [from, to] : connected) printf("%d %d\n", from, to);
 }
