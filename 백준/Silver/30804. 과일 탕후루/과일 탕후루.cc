@@ -22,10 +22,7 @@ int main() {
     ++cnts[fruits[right++]];
     ++cnt;
     if (cnts.size() > 2) {
-      cnts[fruits[left]]--;
-      if (cnts[fruits[left]] == 0) {
-        cnts.erase(fruits[left]);
-      }
+      if (!--cnts[fruits[left]]) cnts.erase(fruits[left]);
       ++left;
       --cnt;
     }
