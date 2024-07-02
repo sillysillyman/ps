@@ -13,9 +13,7 @@ int main() {
   int N, max_cnt = 0;
 
   cin >> N;
-  for (int i = 0; i < N; i++) {
-    cin >> fruits[i];
-  }
+  for (int i = 0; i < N; i++) cin >> fruits[i];
 
   int left = 0, right = 0, cnt = 0;
   unordered_map<int, int> cnts;
