@@ -18,8 +18,8 @@ int dx[4] = {-1, 0, 0, 1};
 int dy[4] = {0, -1, 1, 0};
 int horse_dx[8] = {-2, -2, -1, -1, 1, 1, 2, 2};
 int horse_dy[8] = {-1, 1, -2, 2, -2, 2, -1, 1};
-bool visited[200][200][31];
 bool graph[200][200];
+bool visited[200][200][31];
 
 bool is_inside(int x, int y) { return 0 <= x && x < H && 0 <= y && y < W; }
 
