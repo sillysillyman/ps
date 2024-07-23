@@ -1,15 +1,19 @@
-#include <cstdio>
+#include <iostream>
 
+using namespace std;
 using ll = long long;
 
 int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(nullptr);
+
   int N;
   ll sum = 0;
 
-  scanf("%d", &N);
+  cin >> N;
   for (int num, i = 0; i < N; i++) {
-    scanf("%d", &num);
+    cin >> num;
     sum += num;
   }
-  printf("%d", sum - (ll)N * (N - 1) / 2);
+  cout << sum - (ll)N * (N - 1) / 2;
 }
