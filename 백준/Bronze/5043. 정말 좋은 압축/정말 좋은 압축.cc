@@ -4,5 +4,5 @@ int main() {
   long long N, b;
 
   scanf("%lld %lld", &N, &b);
-  printf("%s", (1LL << b > N >> 1 ? "yes" : "no"));
+  printf("%s", (1 > N >> (b + 1) ? "yes" : "no"));
 }
