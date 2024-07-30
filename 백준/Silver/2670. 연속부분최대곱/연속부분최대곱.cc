@@ -8,7 +8,7 @@ int main() {
   double prev = 1, curr, max_product = 0;
 
   scanf("%d", &N);
-  for (int i = 1; i <= N; i++) {
+  while (N--) {
     scanf("%lf", &curr);
     curr = max(curr, prev * curr);
     max_product = max(max_product, curr);
