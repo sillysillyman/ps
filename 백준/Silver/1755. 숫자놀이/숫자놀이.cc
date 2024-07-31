@@ -4,8 +4,7 @@
 
 using namespace std;
 
-string digits[10] = {"zero", "one", "two",   "three", "four",
-                     "five", "six", "seven", "eight", "nine"};
+string digits[10] = {"z", "o", "tw", "th", "fo", "fi", "si", "se", "e", "n"};
 pair<string, int> nums[99];
 
 int main() {
