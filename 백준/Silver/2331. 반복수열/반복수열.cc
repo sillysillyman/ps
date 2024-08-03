@@ -18,7 +18,7 @@ int calc(int x, int n) {
 
 int main() {
   bool flag = false;
-  int A, P, curr, next;
+  int A, P, curr;
 
   scanf("%d%d", &A, &P);
   curr = A;
