@@ -1,4 +1,4 @@
-#include <cstdio>
+#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -19,13 +19,16 @@ void dfs(int node) {
 }
 
 int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(nullptr);
+
   int u, v;
   int components;
 
-  scanf("%d%d", &N, &M);
+  cin >> N >> M;
   components = N;
   for (int i = 0; i < M; i++) {
-    scanf("%d%d", &u, &v);
+    cin >> u >> v;
     graph[u].push_back(v);
     graph[v].push_back(u);
   }
@@ -34,5 +37,5 @@ int main() {
     if (graph[i].empty()) continue;
     dfs(i);
   }
-  printf("%d", components);
+  cout << components;
 }
