@@ -12,5 +12,10 @@ int main() {
     prev = curr;
     curr = next;
   }
-  printf("%lld", next);
+  if (n == 0)
+    printf("0");
+  else if (n == 1)
+    printf("1");
+  else
+    printf("%lld", next);
 }
