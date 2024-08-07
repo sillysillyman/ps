@@ -23,12 +23,11 @@ int main() {
     for (int i = 0; i < n; i++) cin >> words[i];
     sort(words.begin(), words.end(), [&order](string& a, string& b) {
       int len = min(a.length(), b.length());
-      if (a.substr(0, len) == b.substr(0, len)) return a.length() < b.length();
       for (int i = 0; i < len; i++) {
         if (order[a[i]] == order[b[i]]) continue;
         return (order[a[i]] < order[b[i]]);
       }
-      return true;
+      return a.length() < b.length();
     });
     cout << "year " << t << '\n';
     for (auto& word : words) cout << word << '\n';
