@@ -1,5 +1,4 @@
 #include <cstdio>
-#include <cstring>
 
 int n, c, x, y, z;
 
