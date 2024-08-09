@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <cstring>
 
-int n, c, bedroom, balcony, total;
+int n, c, x, y, z;
 
 int main() {
   scanf("%d%d", &n, &c);
@@ -10,11 +10,11 @@ int main() {
     char t[9];
 
     scanf("%d%s", &a, t);
-    total += a;
-    if (!strcmp(t, "bedroom"))
-      bedroom += a;
-    else if (!strcmp(t, "balcony"))
-      balcony += a;
+    z += a;
+    if (t[1] == 'e')
+      x += a;
+    else if (t[2] == 'l')
+      y += a;
   }
-  printf("%d\n%d\n%.6f", total, bedroom, c * (double)(total - 0.5 * balcony));
+  printf("%d\n%d\n%.6f", z, x, c * (double)(z - 0.5 * y));
 }
