@@ -1,9 +1,9 @@
 #include <cstdio>
 #include <cstring>
 
-int main() {
-  int n, c, bedroom = 0, balcony = 0, total = 0;
+int n, c, bedroom, balcony, total;
 
+int main() {
   scanf("%d%d", &n, &c);
   while (n--) {
     int a;
