@@ -3,14 +3,16 @@
 using namespace std;
 
 int calc(int x, int y, char op) {
-  if (op == '+')
-    return x + y;
-  else if (op == '-')
-    return x - y;
-  else if (op == '*')
-    return x * y;
-  else if (op == '/')
-    return x / y;
+  switch (op) {
+    case '+':
+      return x + y;
+    case '-':
+      return x - y;
+    case '*':
+      return x * y;
+    case '/':
+      return x / y;
+  }
   return 0;
 }
 
@@ -19,7 +21,8 @@ int main() {
   char O1, O2;
 
   cin >> K1 >> O1 >> K2 >> O2 >> K3;
-  cout << min(calc(calc(K1, K2, O1), K3, O2), calc(K1, calc(K2, K3, O2), O1))
-       << '\n'
-       << max(calc(calc(K1, K2, O1), K3, O2), calc(K1, calc(K2, K3, O2), O1));
+  int ans2 = calc(calc(K1, K2, O1), K3, O2);
+  int an2 = calc(K1, calc(K2, K3, O2), O1);
+
+  cout << min(ans2, an2) << '\n' << max(ans2, an2);
 }
