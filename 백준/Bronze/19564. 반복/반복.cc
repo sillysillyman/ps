@@ -1,15 +1,12 @@
-#include <iostream>
-
-using namespace std;
+#include <cstdio>
 
 int main() {
   int L, K = 1;
-  string S;
+  char S[100'001];
 
-  cin >> S;
-  L = S.length();
-  for (int i = 1; i < L; i++) {
+  scanf("%s", S);
+  for (int i = 1; S[i] != '\0'; i++) {
     if (S[i - 1] >= S[i]) ++K;
   }
-  cout << K;
+  printf("%d", K);
 }
