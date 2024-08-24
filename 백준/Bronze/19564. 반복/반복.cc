@@ -1,7 +1,7 @@
 #include <cstdio>
 
 int main() {
-  int L, K = 1;
+  int K = 1;
   char S[100'001];
 
   scanf("%s", S);
