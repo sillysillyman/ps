@@ -5,8 +5,6 @@ int main() {
   char S[100'001];
 
   scanf("%s", S);
-  for (int i = 1; S[i] != '\0'; i++) {
-    if (S[i - 1] >= S[i]) ++K;
-  }
+  for (int i = 1; S[i] != '\0'; i++) K += S[i - 1] >= S[i];
   printf("%d", K);
 }
