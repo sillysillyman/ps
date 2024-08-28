@@ -4,17 +4,8 @@ int main() {
   int N, cnt = 0;
 
   scanf("%d", &N);
-
-  int left = 0, right = 1;
-  while (left <= right && right <= N) {
-    if (int sum = (right - left + 1) * (left + right) / 2; sum == N) {
-      ++cnt;
-      ++left;
-      ++right;
-    } else if (sum < N)
-      ++right;
-    else if (sum > N)
-      ++left;
+  for (int i = 1; i * (i + 1) / 2 <= N; i++) {
+    if (!((N - i * (i + 1) / 2) % i)) ++cnt;
   }
   printf("%d", cnt);
 }
