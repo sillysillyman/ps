@@ -1,8 +1,6 @@
 #include <cstdio>
 #include <numeric>
 
-using namespace std;
-
 int main() {
   int n;
 
@@ -11,6 +9,6 @@ int main() {
     long long a, b;
 
     scanf("%lld %lld", &a, &b);
-    printf("%lld\n", lcm(a, b));
+    printf("%lld\n", std::lcm(a, b));
   }
 }
