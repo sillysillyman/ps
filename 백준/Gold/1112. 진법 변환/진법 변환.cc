@@ -6,16 +6,15 @@ string res;
 
 int main() {
   bool negative = false;
-  int x, b, digit, carry = 0;
+  int x, b, carry = 0;
 
   cin >> x >> b;
-  if (x < 0) {
+  if (x < 0 && b > 0) {
     negative = true;
-    if (b > 0) x = -x;
+    x = -x;
   }
   while (x) {
-    digit = x % b;
-    if (digit >= 0) {
+    if (int digit = x % b; digit >= 0) {
       res = to_string((x % b)) + res;
       carry = 0;
     } else {
@@ -28,7 +27,7 @@ int main() {
     x /= b;
     x += carry;
   }
-  if (negative && b > 0) res = '-' + res;
+  if (negative) res = '-' + res;
   if (res.empty())
     cout << '0';
   else
