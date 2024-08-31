@@ -20,10 +20,8 @@ int main() {
     }
   }
 
-  int i = s_len, j = t_len;
   string lcs;
-
-  while (i && j) {
+  for (int i = s_len, j = t_len; i && j;) {
     if (s[i - 1] == t[j - 1]) {
       lcs = s[i - 1] + lcs;
       --i;
