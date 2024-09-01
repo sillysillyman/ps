@@ -1,35 +1,28 @@
-#include <iostream>
+#include <cstdio>
 
-using namespace std;
-
-string res;
+char res[32];
 
 int main() {
   bool negative = false;
-  int x, b, carry = 0;
+  int x, b, idx = 0, carry = 0;
 
-  cin >> x >> b;
+  scanf("%d%d", &x, &b);
   if (x < 0 && b > 0) {
     negative = true;
     x = -x;
   }
-  while (x) {
-    if (int digit = x % b; digit >= 0) {
-      res = to_string((x % b)) + res;
+  do {
+    int digit = x % b;
+    if (digit >= 0)
       carry = 0;
-    } else {
-      if (digit > b)
-        res = to_string(x % b - b) + res;
-      else
-        res = to_string(x % b + b) + res;
+    else {
+      digit -= b;
       carry = 1;
     }
+    res[idx++] = '0' + (digit < 0 ? digit + b : digit);
     x /= b;
     x += carry;
-  }
-  if (negative) res = '-' + res;
-  if (res.empty())
-    cout << '0';
-  else
-    cout << res;
+  } while (x);
+  if (negative) res[idx++] = '-';
+  while (idx--) printf("%c", res[idx]);
 }
