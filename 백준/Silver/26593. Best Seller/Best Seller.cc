@@ -6,7 +6,7 @@
 using namespace std;
 
 struct Info {
-  char name[11];
+  char name[9];
   int sales;
   float profit;
 
@@ -21,7 +21,7 @@ struct Info {
 vector<Info> infos;
 
 int main() {
-  char name[11];
+  char name[9];
   int sales;
   float cost;
   while (~scanf("%s%d%f", name, &sales, &cost)) {
