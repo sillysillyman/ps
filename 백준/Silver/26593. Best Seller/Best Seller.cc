@@ -1,39 +1,38 @@
 #include <algorithm>
-#include <iostream>
+#include <cstdio>
+#include <cstring>
 #include <vector>
 
 using namespace std;
 
 struct Info {
-  string name;
+  char name[11];
   int sales;
-  double profit;
+  float profit;
 
   bool operator>(const Info& other) const {
-    return profit == other.profit ? (sales == other.sales ? name < other.name
-                                                          : sales > other.sales)
-                                  : profit > other.profit;
+    return profit == other.profit
+               ? (sales == other.sales ? strcmp(name, other.name) < 0
+                                       : sales > other.sales)
+               : profit > other.profit;
   }
 };
-
-ostream& operator<<(ostream& os, Info& info) {
-  os << '$' << info.profit << " - " << info.name << '/' << info.sales;
-  return os;
-}
 
 vector<Info> infos;
 
 int main() {
-  ios_base::sync_with_stdio(false);
-  cin.tie(nullptr);
-
-  string name;
+  char name[11];
   int sales;
-  double cost;
-  while (cin >> name >> sales >> cost)
-    infos.push_back({name, sales, cost * sales});
+  float cost;
+  while (~scanf("%s%d%f", name, &sales, &cost)) {
+    Info tmp;
+
+    strcpy(tmp.name, name);
+    tmp.sales = sales;
+    tmp.profit = cost * sales;
+    infos.emplace_back(tmp);
+  }
   sort(infos.begin(), infos.end(), greater());
-  cout << fixed;
-  cout.precision(2);
-  for (auto& info : infos) cout << info << '\n';
+  for (auto& info : infos)
+    printf("$%.2f - %s/%d\n", info.profit, info.name, info.sales);
 }
