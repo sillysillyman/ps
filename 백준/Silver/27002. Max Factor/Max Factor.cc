@@ -20,6 +20,7 @@ int main() {
 
     scanf("%d", &num);
     for (int i = num; i > 0; i--) {
+      if (i < max_factor) break;
       if (!(num % i) && sieve[i] && i > max_factor) {
         max_factor = i;
         res = num;
