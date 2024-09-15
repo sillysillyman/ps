@@ -7,7 +7,6 @@ int main() {
 
   while (~scanf("%1d", &digit)) ++digits[digit];
   for (int i = 9; i >= 0; i--) {
-    if (!digits[i]) continue;
     while (digits[i]--) printf("%d", i);
   }
 }
