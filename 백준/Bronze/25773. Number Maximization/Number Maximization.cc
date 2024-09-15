@@ -1,10 +1,13 @@
-#include <algorithm>
 #include <cstdio>
 
-int main() {
-  char num[7];
+int digits[10];
 
-  scanf("%s", num);
-  std::sort(num, num + 6, std::greater());
-  printf("%s", num);
+int main() {
+  int digit;
+
+  while (~scanf("%1d", &digit)) ++digits[digit];
+  for (int i = 9; i >= 0; i--) {
+    if (!digits[i]) continue;
+    while (digits[i]--) printf("%d", i);
+  }
 }
