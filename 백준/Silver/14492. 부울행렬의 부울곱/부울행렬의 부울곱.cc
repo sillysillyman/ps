@@ -1,28 +1,25 @@
+#include <bitset>
 #include <cstdio>
 
-int A[300][300], B[300][300];
+std::bitset<300> A[300], B[300];
 
 int main() {
   int N, cnt = 0;
 
   scanf("%d", &N);
   for (int i = 0; i < N; i++) {
-    for (int j = 0; j < N; j++) scanf("%d", &A[i][j]);
-  }
-  for (int i = 0; i < N; i++) {
-    for (int j = 0; j < N; j++) scanf("%d", &B[i][j]);
+    for (int j = 0; j < N; j++) {
+      if (int b; scanf("%d", &b) && b) A[i][j] = 1;
+    }
   }
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < N; j++) {
-      bool res = false;
-
-      for (int k = 0; k < N; k++) {
-        res |= A[i][k] & B[k][j];
-        if (res) {
-          ++cnt;
-          break;
-        }
-      }
+      if (int b; scanf("%d", &b) && b) B[j][i] = 1;
+    }
+  }
+  for (int i = 0; i < N; i++) {
+    for (int j = 0; j < N; j++) {
+      if ((A[i] & B[j]).any()) ++cnt;
     }
   }
   printf("%d", cnt);
