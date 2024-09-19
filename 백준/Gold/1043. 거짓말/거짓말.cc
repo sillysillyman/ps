@@ -1,53 +1,35 @@
-#include <iostream>
+#include <cstdio>
 #include <vector>
 
 using namespace std;
 
-int parents[51];
+int p[51];
 vector<int> know_truth;
 
-int find(int x) {
-  if (parents[x] == x) return x;
-  return parents[x] = find(parents[x]);
-}
+int find(int x) { return p[x] == x ? x : p[x] = find(p[x]); }
 
-void merge(int x, int y) {
-  x = find(x);
-  y = find(y);
-  if (x == y) return;
-  if (x < y)
-    parents[y] = x;
-  else
-    parents[x] = y;
-}
+void unite(int x, int y) { p[find(x)] = find(y); }
 
 int main() {
-  ios_base::sync_with_stdio(false);
-  cin.tie(NULL);
+  int N, M, people, cnt = 0;
 
-  int N, M, people;
-
-  cin >> N >> M;
-  for (int i = 1; i <= N; i++) parents[i] = i;
-  cin >> people;
+  scanf("%d%d", &N, &M);
+  for (int i = 1; i <= N; i++) p[i] = i;
+  scanf("%d", &people);
   for (int person, i = 0; i < people; i++) {
-    cin >> person;
-    merge(0, person);
+    scanf("%d", &person);
+    unite(0, person);
   }
-
-  int cnt = 0;
-
   for (int first_person, i = 0; i < M; i++) {
-    cin >> people;
-    cin >> first_person;
+    scanf("%d", &people);
+    scanf("%d", &first_person);
     know_truth.push_back(first_person);
     for (int person, j = 1; j < people; j++) {
-      cin >> person;
-      merge(first_person, person);
+      scanf("%d", &person);
+      unite(first_person, person);
     }
   }
-  for (int person : know_truth) {
-    if (find(person) != 0) cnt++;
-  }
-  cout << cnt;
+  for (int person : know_truth)
+    if (find(person) != find(0)) ++cnt;
+  printf("%d", cnt);
 }
