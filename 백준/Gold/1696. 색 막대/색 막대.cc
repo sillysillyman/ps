@@ -30,7 +30,7 @@ int main() {
     if (m.find(h1) == m.end()) m[h1] = idx++;
     if (m.find(h2) == m.end()) m[h2] = idx++;
     x = m[h1], y = m[h2];
-    deg[x]++, deg[y]++;
+    ++deg[x], ++deg[y];
     unite(x, y);
   }
   for (int i = 0; i < idx; i++)
