@@ -1,50 +1,26 @@
-#include <iostream>
+#include <cstdio>
 
-using namespace std;
+int p[201];
 
-int parents[201];
+int find(int x) { return p[x] == x ? x : p[x] = find(p[x]); }
 
-int find(int x) {
-  if (parents[x] == x) return x;
-  return parents[x] = find(parents[x]);
-}
-
-void merge(int x, int y) {
-  x = find(x);
-  y = find(y);
-  if (x == y) return;
-  if (x < y)
-    parents[y] = x;
-  else
-    parents[x] = y;
-}
+void unite(int x, int y) { p[find(x)] = find(y); }
 
 int main() {
-  ios_base::sync_with_stdio(false);
-  cin.tie(NULL);
+  int N, M, first_city;
 
-  int N, M;
-
-  cin >> N >> M;
-  for (int i = 1; i <= N; i++) parents[i] = i;
+  scanf("%d%d", &N, &M);
+  for (int i = 1; i <= N; i++) p[i] = i;
   for (int i = 1; i <= N; i++) {
-    for (int j = 1; j <= N; j++) {
-      int connected;
-
-      cin >> connected;
-      if (connected) merge(i, j);
+    for (int connected, j = 1; j <= N; j++) {
+      scanf("%d", &connected);
+      if (connected) unite(i, j);
     }
   }
-
-  int first_city;
-
-  cin >> first_city;
+  scanf("%d", &first_city);
   for (int city, i = 1; i < M; i++) {
-    cin >> city;
-    if (find(city) != find(first_city)) {
-      cout << "NO";
-      return 0;
-    }
+    scanf("%d", &city);
+    if (find(city) != find(first_city)) return puts("NO"), 0;
   }
-  cout << "YES";
+  puts("YES");
 }
