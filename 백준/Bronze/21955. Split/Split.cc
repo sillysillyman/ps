@@ -1,10 +1,12 @@
-#include <iostream>
-
-using namespace std;
+#include <cstdio>
+#include <cstring>
 
 int main() {
-  string N;
+  char N[20];
 
-  cin >> N;
-  cout << N.substr(0, N.length() / 2) << ' ' << N.substr(N.length() / 2);
+  scanf("%s", N);
+  for (int i = 0; N[i]; i++) {
+    if (i == strlen(N) / 2) putchar(' ');
+    printf("%c", N[i]);
+  }
 }
