@@ -17,10 +17,7 @@ int main() {
     priority_queue<ll, vector<ll>, greater<ll>> pq;
 
     cin >> K;
-    for (int file, i = 0; i < K; ++i) {
-      cin >> file;
-      pq.push(file);
-    }
+    for (int file, i = 0; i < K; ++i) cin >> file, pq.push(file);
     while (pq.size() > 1) {
       ll cost = 0;
 
