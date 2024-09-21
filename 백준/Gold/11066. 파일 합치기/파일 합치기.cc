@@ -18,10 +18,8 @@ int main() {
     scanf("%d", &K);
     for (int i = 1; i <= K; i++) scanf("%d", &prefix_sum[i]);
     for (int i = 1; i <= K; i++) prefix_sum[i] += prefix_sum[i - 1];
-    fill(&dp[0][0], &dp[K][K + 1], 0);
-    for (int len = 2; len <= K; len++) {
-      for (int i = 1; i + len - 1 <= K; i++) {
-        int j = i + len - 1;
+    for (int i = K - 1; i; i--) {
+      for (int j = i + 1; j <= K; j++) {
         dp[i][j] = INF;
         for (int k = i; k < j; k++)
           dp[i][j] = min(dp[i][j], dp[i][k] + dp[k + 1][j] + prefix_sum[j] -
