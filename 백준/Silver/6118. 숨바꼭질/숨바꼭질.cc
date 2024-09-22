@@ -32,8 +32,7 @@ int main() {
       nodes.push_back(curr);
     else if (depth > max_depth) {
       max_depth = depth;
-      nodes.clear();
-      nodes.push_back(curr);
+      nodes.assign(1, curr);
     }
     q.pop();
     for (int next : graph[curr]) {
