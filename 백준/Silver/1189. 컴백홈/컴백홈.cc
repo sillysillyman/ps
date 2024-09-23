@@ -1,7 +1,5 @@
 #include <cstdio>
 
-using namespace std;
-
 int R, C, K, cnt;
 int dx[4] = {-1, 0, 0, 1};
 int dy[4] = {0, -1, 1, 0};
@@ -21,7 +19,7 @@ void dfs(int x, int y, int depth) {
 }
 
 int main() {
-  scanf("%d %d %d", &R, &C, &K);
+  scanf("%d%d%d", &R, &C, &K);
   for (int i = 0; i < R; i++)
     for (int j = 0; j < C; j++) scanf(" %1c", &graph[i][j]);
   dfs(R - 1, 0, 1);
