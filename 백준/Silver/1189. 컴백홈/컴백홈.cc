@@ -10,10 +10,7 @@ char graph[5][5];
 bool is_inside(int x, int y) { return 0 <= x && x < R && 0 <= y && y < C; }
 
 void dfs(int x, int y, int depth) {
-  if (x == 0 && y == C - 1 && depth == K) {
-    ++cnt;
-    return;
-  }
+  if (x == 0 && y == C - 1 && depth == K) ++cnt;
   graph[x][y] = 'T';
   for (int i = 0; i < 4; i++) {
     int nx = x + dx[i];
