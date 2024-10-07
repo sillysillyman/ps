@@ -1,15 +1,20 @@
-#include <iostream>
+#include <cstdio>
+#include <cstring>
 #include <numeric>
 
 using namespace std;
 
 int main() {
-  string s, t;
+  char s[101], t[101], temp_s[2451], temp_t[2451];
 
-  cin >> s >> t;
-  int n = lcm(s.length(), t.length());
-  string original_s = s, original_t = t;
-  while (s.length() < n) s += original_s;
-  while (t.length() < n) t += original_t;
-  cout << (s == t);
+  scanf("%s%s", s, t);
+
+  int len_s = strlen(s), len_t = strlen(t);
+  int n = lcm(len_s, len_t);
+
+  strcpy(temp_s, s);
+  strcpy(temp_t, t);
+  while (strlen(temp_s) < n) strcat(temp_s, s);
+  while (strlen(temp_t) < n) strcat(temp_t, t);
+  printf("%d", !strcmp(temp_s, temp_t));
 }
