@@ -1,47 +1,47 @@
-#include <algorithm>
 #include <cstdio>
 #include <queue>
+#include <vector>
 
 using namespace std;
 
-int N, M, max_safe_dist = 0;
-int dx[8] = {-1, -1, -1, 0, 0, 1, 1, 1}, dy[8] = {-1, 0, 1, -1, 1, -1, 0, 1};
-bool visited[50][50];
-int graph[50][50];
+int dx[8] = {-1, -1, -1, 0, 0, 1, 1, 1};
+int dy[8] = {-1, 0, 1, -1, 1, -1, 0, 1};
 
-bool is_inside(int x, int y) { return 0 <= x && x < N && 0 <= y && y < M; }
+int main() {
+  int N, M;
 
-int bfs(int x, int y) {
-  queue<tuple<int, int, int>> q;
+  scanf("%d%d", &N, &M);
 
-  q.push({x, y, 0});
-  visited[x][y] = true;
-  while (!q.empty()) {
-    auto [x, y, safe_dist] = q.front();
+  vector<vector<int>> graph(N, vector<int>(M));
+  vector<vector<int>> dist(N, vector<int>(M, -1));
+  queue<pair<int, int>> q;
 
-    if (graph[x][y]) return safe_dist;
-    q.pop();
-    for (int i = 0; i < 8; i++) {
-      int nx = x + dx[i], ny = y + dy[i];
-
-      if (is_inside(nx, ny) && !visited[nx][ny]) {
-        if (graph[nx][ny]) return safe_dist + 1;
-        visited[nx][ny] = true;
-        q.push({nx, ny, safe_dist + 1});
+  for (int i = 0; i < N; i++) {
+    for (int j = 0; j < M; j++) {
+      scanf("%d", &graph[i][j]);
+      if (graph[i][j]) {
+        q.push({i, j});
+        dist[i][j] = 0;
       }
     }
   }
-  return 0;
-}
 
-int main() {
-  scanf("%d%d", &N, &M);
-  for (int i = 0; i < N; i++)
-    for (int j = 0; j < M; j++) scanf("%d", &graph[i][j]);
-  for (int i = 0; i < N; i++)
-    for (int j = 0; j < M; j++) {
-      fill(&visited[0][0], &visited[N - 1][M], false);
-      max_safe_dist = max(max_safe_dist, bfs(i, j));
+  while (!q.empty()) {
+    auto [x, y] = q.front();
+
+    q.pop();
+    for (int d = 0; d < 8; d++) {
+      int nx = x + dx[d], ny = y + dy[d];
+
+      if (0 <= nx && nx < N && 0 <= ny && ny < M && dist[nx][ny] == -1) {
+        dist[nx][ny] = dist[x][y] + 1;
+        q.push({nx, ny});
+      }
     }
-  printf("%d", max_safe_dist);
+  }
+
+  int max_dist = 0;
+  for (int i = 0; i < N; i++)
+    for (int j = 0; j < M; j++) max_dist = max(max_dist, dist[i][j]);
+  printf("%d", max_dist);
 }
