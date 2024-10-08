@@ -25,6 +25,7 @@ int bfs(int x, int y) {
       int nx = x + dx[i], ny = y + dy[i];
 
       if (is_inside(nx, ny) && !visited[nx][ny]) {
+        if (graph[nx][ny]) return safe_dist + 1;
         visited[nx][ny] = true;
         q.push({nx, ny, safe_dist + 1});
       }
