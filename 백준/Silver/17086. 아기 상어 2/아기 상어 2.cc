@@ -13,7 +13,6 @@ int main() {
   scanf("%d%d", &N, &M);
 
   vector<vector<int>> graph(N, vector<int>(M));
-  vector<vector<int>> dist(N, vector<int>(M, -1));
   queue<pair<int, int>> q;
 
   for (int i = 0; i < N; i++) {
@@ -21,8 +20,9 @@ int main() {
       scanf("%d", &graph[i][j]);
       if (graph[i][j]) {
         q.push({i, j});
-        dist[i][j] = 0;
-      }
+        graph[i][j] = 0;
+      } else
+        graph[i][j] = -1;
     }
   }
 
@@ -30,11 +30,11 @@ int main() {
     auto [x, y] = q.front();
 
     q.pop();
-    for (int d = 0; d < 8; d++) {
-      int nx = x + dx[d], ny = y + dy[d];
+    for (int i = 0; i < 8; i++) {
+      int nx = x + dx[i], ny = y + dy[i];
 
-      if (0 <= nx && nx < N && 0 <= ny && ny < M && dist[nx][ny] == -1) {
-        dist[nx][ny] = dist[x][y] + 1;
+      if (0 <= nx && nx < N && 0 <= ny && ny < M && graph[nx][ny] == -1) {
+        graph[nx][ny] = graph[x][y] + 1;
         q.push({nx, ny});
       }
     }
@@ -42,6 +42,6 @@ int main() {
 
   int max_dist = 0;
   for (int i = 0; i < N; i++)
-    for (int j = 0; j < M; j++) max_dist = max(max_dist, dist[i][j]);
+    for (int j = 0; j < M; j++) max_dist = max(max_dist, graph[i][j]);
   printf("%d", max_dist);
 }
