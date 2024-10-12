@@ -6,7 +6,7 @@ int main() {
   char str[181];
 
   for (int len, i = 0; i < 6; i++) {
-    scanf(" %[^\n]%*c", str);
+    scanf(" %[^\n]", str);
     len = strlen(str);
     if (str[len - 1] == ' ') str[len--] = '\0';
     arr[i] = len;
