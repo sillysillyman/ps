@@ -1,11 +1,9 @@
-#include <iostream>
-
-using namespace std;
+#include <cstdio>
+#include <cstring>
 
 int main() {
-  int N;
-  string str;
+  char str[11];
 
-  cin >> N >> str;
-  cout << (str.find("gori") != string::npos ? "YES" : "NO");
+  scanf("%*d %s", str);
+  printf("%s", strstr(str, "gori") != nullptr ? "YES" : "NO");
 }
