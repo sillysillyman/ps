@@ -5,9 +5,5 @@ int main() {
   char S[4];
 
   scanf("%s", S);
-  printf("%d", !strcmp(S, "(1)") ? 0
-               : !strcmp(S, "1()") || !strcmp(S, "1)(") || !strcmp(S, "()1") ||
-                       !strcmp(S, ")(1")
-                   ? 1
-                   : 2);
+  printf("%d", !strcmp(S, "(1)") ? 0 : !strcmp(S, ")1(") ? 2 : 1);
 }
