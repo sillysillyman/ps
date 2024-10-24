@@ -1,25 +1,17 @@
 #include <cstdio>
 
-char grid[10][10];
-
 int main() {
   int N, D;
 
   scanf("%d%d", &N, &D);
-  for (int i = 0; i < N; i++)
-    for (int j = 0; j < N; j++) scanf(" %c", &grid[i][j]);
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < N; j++) {
+      char ch;
+      scanf(" %c", &ch);
       if (D == 1)
-        printf("%c", grid[i][j] == 'b'   ? 'p'
-                     : grid[i][j] == 'd' ? 'q'
-                     : grid[i][j] == 'p' ? 'b'
-                                         : 'd');
+        printf("%c", ch == 'b' ? 'p' : ch == 'd' ? 'q' : ch == 'p' ? 'b' : 'd');
       else
-        printf("%c", grid[i][j] == 'b'   ? 'd'
-                     : grid[i][j] == 'd' ? 'b'
-                     : grid[i][j] == 'p' ? 'q'
-                                         : 'p');
+        printf("%c", ch == 'b' ? 'd' : ch == 'd' ? 'b' : ch == 'p' ? 'q' : 'p');
     }
     putchar('\n');
   }
