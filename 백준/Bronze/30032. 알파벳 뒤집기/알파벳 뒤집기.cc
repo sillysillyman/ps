@@ -13,6 +13,6 @@ int main() {
       else
         printf("%c", ch == 'b' ? 'd' : ch == 'd' ? 'b' : ch == 'p' ? 'q' : 'p');
     }
-    putchar('\n');
+    printf("\n");
   }
 }
