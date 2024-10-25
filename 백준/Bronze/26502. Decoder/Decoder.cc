@@ -2,7 +2,7 @@
 
 int main() {
   int n;
-  char buffer[20];
+  char buffer[17];
 
   scanf("%d", &n);
   while (n--) {
