@@ -1,14 +1,12 @@
 #include <algorithm>
 #include <cstdio>
-#include <queue>
+#include <deque>
 #include <tuple>
 
 using namespace std;
 
 struct Tuple {
   int x, y, cost;
-
-  bool operator>(const Tuple& other) const { return cost > other.cost; }
 };
 
 const int INF = 250'000;
@@ -36,15 +34,16 @@ int main() {
       for (int j = min(Y1, Y2); j <= max(Y1, Y2); j++) graph[i][j] = 2;
   }
 
-  priority_queue<Tuple, vector<Tuple>, greater<>> pq;
-
-  pq.push({0, 0, 0});
+  deque<Tuple> dq;
+  dq.push_back({0, 0, 0});
   costs[0][0] = 0;
-  while (!pq.empty()) {
-    auto [x, y, cost] = pq.top();
 
-    pq.pop();
+  while (!dq.empty()) {
+    auto [x, y, cost] = dq.front();
+    dq.pop_front();
+
     if (cost > costs[x][y]) continue;
+
     for (int i = 0; i < 4; i++) {
       int nx = x + dx[i], ny = y + dy[i];
 
@@ -53,7 +52,10 @@ int main() {
 
         if (next_cost < costs[nx][ny]) {
           costs[nx][ny] = next_cost;
-          pq.push({nx, ny, next_cost});
+          if (graph[nx][ny])
+            dq.push_back({nx, ny, next_cost});
+          else
+            dq.push_front({nx, ny, next_cost});
         }
       }
     }
