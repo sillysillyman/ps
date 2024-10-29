@@ -1,7 +1,7 @@
 #include <cstdio>
 
 int p[3'001];
-int degrees[3'001];
+int deg[3'001];
 
 int find(int x) { return x == p[x] ? x : p[x] = find(p[x]); }
 
@@ -16,12 +16,12 @@ int main() {
     int a, b;
 
     scanf("%d%d", &a, &b);
-    ++degrees[a], ++degrees[b];
+    ++deg[a], ++deg[b];
     unite(a, b);
   }
   for (int i = 1; i <= V; i++) {
     if (find(1) != find(i)) return puts("NO"), 0;
-    if (degrees[i] & 1) ++odd;
+    if (deg[i] & 1) ++odd;
   }
   odd == 0 || odd == 2 ? puts("YES") : puts("NO");
 }
