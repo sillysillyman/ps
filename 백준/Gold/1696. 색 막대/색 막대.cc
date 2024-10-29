@@ -34,8 +34,8 @@ int main() {
     unite(x, y);
   }
   for (int i = 0; i < idx; i++)
-    if (deg[i] & 1) ++odd;
+    if (find(i) != find(0)) return puts("Impossible"), 0; 
   for (int i = 0; i < idx; i++)
-    if (find(i) != find(0)) return cout << "Impossible", 0;
+    if (deg[i] & 1) ++odd; 
   cout << (odd == 0 || odd == 2 ? "Possible" : "Impossible");
 }
