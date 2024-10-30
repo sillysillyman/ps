@@ -22,10 +22,10 @@ void dijkstra(int src) {
 
     pq.pop();
     if (curr_dist > dists[curr]) continue;
-    for (auto& [next, next_dist] : graph[curr]) {
-      if (dists[next] > dists[curr] + next_dist) {
-        dists[next] = dists[curr] + next_dist;
-        pq.push({dists[next], next});
+    for (auto& [next, dist] : graph[curr]) {
+      if (int next_dist = curr_dist + dist; dists[next] > next_dist) {
+        dists[next] = next_dist;
+        pq.push({next_dist, next});
       }
     }
   }
@@ -44,8 +44,7 @@ int solution(int N, vector<vector<int>> road, int K) {
     graph[to].push_back({from, dist});
   }
   dijkstra(1);
-  for (int i = 1; i <= N; i++) {
+  for (int i = 1; i <= N; i++)
     if (dists[i] <= K) ++answer;
-  }
   return answer;
 }
