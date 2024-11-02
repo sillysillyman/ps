@@ -9,10 +9,8 @@ int main() {
 
   scanf("%d", &n);
   for (int i = 0; i <= n; i++) {
-    vector<int> tmp;
+    vector<int> tmp = {n, i};
 
-    tmp.push_back(n);
-    tmp.push_back(i);
     while (*(&tmp.back() - 1) - tmp.back() >= 0)
       tmp.push_back(*(&tmp.back() - 1) - tmp.back());
     if (tmp.size() > arr.size()) arr = tmp;
