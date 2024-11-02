@@ -1,20 +1,35 @@
 #include <cstdio>
-#include <vector>
-
-using namespace std;
 
 int main() {
-  int n;
-  vector<int> arr;
+  int n, max_cnt = 0, second;
+  int prev, curr, next;
 
   scanf("%d", &n);
   for (int i = 0; i <= n; i++) {
-    vector<int> tmp = {n, i};
+    int cnt = 2;
 
-    while (*(&tmp.back() - 1) - tmp.back() >= 0)
-      tmp.push_back(*(&tmp.back() - 1) - tmp.back());
-    if (tmp.size() > arr.size()) arr = tmp;
+    prev = n;
+    curr = i;
+    while (true) {
+      next = prev - curr;
+      if (next < 0) break;
+      ++cnt;
+      prev = curr;
+      curr = next;
+    }
+    if (cnt > max_cnt) {
+      max_cnt = cnt;
+      second = i;
+    }
   }
-  printf("%zu\n", arr.size());
-  for (int num : arr) printf("%d ", num);
+  printf("%d\n%d %d ", max_cnt, n, second);
+  prev = n;
+  curr = second;
+  while (true) {
+    next = prev - curr;
+    if (next < 0) break;
+    printf("%d ", next);
+    prev = curr;
+    curr = next;
+  }
 }
