@@ -1,9 +1,14 @@
-#include <cstdio>
 #include <cstring>
+#include <iostream>
 
-char P[1'000'001], S[1'000'001];
+using namespace std;
+
+char S[1'000'001], P[1'000'001];
 
 int main() {
-  scanf("%s %s", S, P);
-  printf("%d", strstr(S, P) != nullptr);
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+
+  cin >> S >> P;
+  cout << (strstr(S, P) != nullptr);
 }
