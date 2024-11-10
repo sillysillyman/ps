@@ -46,7 +46,7 @@ int main() {
   bool is_connected = true;
   int root = find(0);
   for (int i = 0; i < N; i++) {
-    if (find(p[i]) != root) {
+    if (find(i) != root) {
       is_connected = false;
       break;
     }
