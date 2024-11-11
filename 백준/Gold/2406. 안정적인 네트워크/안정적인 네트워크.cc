@@ -22,19 +22,19 @@ int main() {
 
   int n, m;
 
-  scanf("%d%d", &n, &m);
+  cin >> n >> m;
   for (int i = 0; i < n; i++) p[i] = i;
   while (m--) {
     int from, to;
 
-    scanf("%d%d", &from, &to);
+    cin >> from >> to;
     --from, --to;
     unite(from, to);
   }
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < n; j++) {
       int cost;
-      scanf("%d", &cost);
+      cin >> cost;
       if (i && i < j) edges.push_back({i, j, cost});
     }
   }
@@ -53,6 +53,6 @@ int main() {
     }
   }
 
-  printf("%d %d\n", X, K);
-  for (auto& [from, to] : connected) printf("%d %d\n", from + 1, to + 1);
+  cout << X << ' ' << K << '\n';
+  for (auto& [from, to] : connected) cout << from + 1 << ' ' << to + 1 << '\n';
 }
