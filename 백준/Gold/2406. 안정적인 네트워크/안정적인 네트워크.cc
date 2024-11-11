@@ -1,5 +1,5 @@
 #include <algorithm>
-#include <cstdio>
+#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -10,13 +10,16 @@ struct Edge {
 
 int p[1'000];
 vector<Edge> edges;
-vector<Edge> connected;
+vector<pair<int, int>> connected;
 
 int find(int x) { return x == p[x] ? x : p[x] = find(p[x]); }
 
 void unite(int x, int y) { p[find(x)] = find(y); }
 
 int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(nullptr);
+
   int n, m;
 
   scanf("%d%d", &n, &m);
@@ -40,14 +43,16 @@ int main() {
   sort(edges.begin(), edges.end(),
        [](Edge& e1, Edge& e2) { return e1.cost < e2.cost; });
   for (Edge& edge : edges) {
-    if (find(edge.from) != find(edge.to)) {
-      unite(edge.from, edge.to);
+    int from = edge.from, to = edge.to;
+
+    if (find(from) != find(to)) {
+      unite(from, to);
       X += edge.cost;
       ++K;
-      connected.push_back(edge);
+      connected.push_back({from, to});
     }
   }
 
   printf("%d %d\n", X, K);
-  for (Edge& edge : connected) printf("%d %d\n", edge.from + 1, edge.to + 1);
+  for (auto& [from, to] : connected) printf("%d %d\n", from + 1, to + 1);
 }
