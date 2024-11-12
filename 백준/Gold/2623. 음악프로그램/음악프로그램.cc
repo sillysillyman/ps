@@ -40,7 +40,7 @@ int main() {
     orders.push_back(curr);
     q.pop();
     for (int next : graph[curr]) {
-      if (!visited[next] && !(--indeg[next])) {
+      if (!(--indeg[next])) {
         q.push(next);
         visited[next] = true;
       }
