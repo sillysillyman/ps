@@ -29,8 +29,7 @@ int main() {
     cout << taller << ' ';
     q.pop();
     for (int shorter : orders[taller]) {
-      indegrees[shorter]--;
-      if (indegrees[shorter] == 0) q.push(shorter);
+      if (--indegrees[shorter] == 0) q.push(shorter);
     }
   }
 }
