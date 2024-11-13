@@ -17,8 +17,7 @@ int main() {
   for (int i = 1; i <= N; ++i) {
     int u, v;
     cin >> u >> v;
-    graph[i].first = u;
-    graph[i].second = v;
+    graph[i] = {u, v};
     ++indeg[u];
     ++indeg[v];
   }
@@ -38,15 +37,12 @@ int main() {
     q.pop();
 
     auto [next1, next2] = graph[curr];
-    if (!visited[next1] && --indeg[next1] < 2) {
-      visited[next1] = true;
-      q.push(next1);
-      --cnt;
-    }
-    if (!visited[next2] && --indeg[next2] < 2) {
-      visited[next2] = true;
-      q.push(next2);
-      --cnt;
+    for (int next : {next1, next2}) {
+      if (!visited[next] && --indeg[next] < 2) {
+        visited[next] = true;
+        q.push(next);
+        --cnt;
+      }
     }
   }
 
