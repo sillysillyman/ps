@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <iostream>
 #include <queue>
 #include <vector>
@@ -31,6 +30,7 @@ int main() {
       graph[A].push_back(B);
     }
 
+    int max_num = 0;
     queue<int> q;
     for (int i = 0; i < M; ++i) {
       if (!indeg[i]) {
@@ -41,25 +41,18 @@ int main() {
     while (!q.empty()) {
       int curr = q.front();
 
+      max_num = max(max_num, num[curr].first);
       q.pop();
       for (int next : graph[curr]) {
         if (!--indeg[next]) q.push(next);
-        if (num[next].second) {
+        if (!num[next].second && num[next].first == num[curr].first) {
+          num[next].first += 1;
+          num[next].second = true;
+        } else
           num[next].first = max(num[next].first, num[curr].first);
-        } else {
-          if (num[next].first == num[curr].first) {
-            num[next].first += 1;
-            num[next].second = true;
-          } else {
-            num[next].first = max(num[next].first, num[curr].first);
-          }
-        }
       }
     }
-    int max_num = 0;
-    for (int i = 0; i < num.size(); i++) {
-      max_num = max(max_num, num[i].first);
-    }
+
     cout << K << ' ' << max_num << '\n';
   }
 }
