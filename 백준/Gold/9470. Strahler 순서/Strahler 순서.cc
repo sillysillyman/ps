@@ -1,20 +1,17 @@
-#include <iostream>
+#include <cstdio>
 #include <queue>
 #include <vector>
 
 using namespace std;
 
 int main() {
-  ios_base::sync_with_stdio(false);
-  cin.tie(nullptr);
-
   int T;
 
-  cin >> T;
+  scanf("%d", &T);
   while (T--) {
     int K, M, P;
 
-    cin >> K >> M >> P;
+    scanf("%d%d%d", &K, &M, &P);
 
     vector<int> indeg(M, 0);
     vector<pair<int, bool>> num(M, {0, false});
@@ -23,7 +20,7 @@ int main() {
     while (P--) {
       int A, B;
 
-      cin >> A >> B;
+      scanf("%d%d", &A, &B);
       --A;
       --B;
       ++indeg[B];
@@ -53,6 +50,6 @@ int main() {
       }
     }
 
-    cout << K << ' ' << max_num << '\n';
+    printf("%d %d\n", K, max_num);
   }
 }
