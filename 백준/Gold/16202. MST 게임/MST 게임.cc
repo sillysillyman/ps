@@ -32,33 +32,32 @@ int main() {
     edges[i] = {u, v, i + 1};
   }
 
-  bool flag = false;
   sort(edges.begin(), edges.end(), greater());
-  while (K--) {
+  while (K) {
     int score = 0;
 
-    if (!flag) {
-      for (int i = 0; i < N; i++) p[i] = i;
-      for (int i = M - 1; i >= 0; i--) {
-        auto [u, v, w] = edges[i];
+    for (int i = 0; i < N; i++) p[i] = i;
+    for (int i = M - 1; i >= 0; i--) {
+      auto [u, v, w] = edges[i];
 
-        if (find(u) == find(v)) continue;
-        unite(u, v);
-        score += w;
-      }
-
-      int root = find(0);
-      for (int i = 1; i < N; i++) {
-        if (find(i) != root) {
-          flag = true;
-          break;
-        }
-      }
+      if (find(u) == find(v)) continue;
+      unite(u, v);
+      score += w;
     }
 
-    if (flag) score = 0;
+    bool flag = false;
+    int root = find(0);
+    for (int i = 1; i < N; i++) {
+      if (find(i) != root) {
+        flag = true;
+        break;
+      }
+    }
+    if (flag) break;
 
     printf("%d ", score);
     --M;
+    --K;
   }
+  while (K--) printf("0 ");
 }
