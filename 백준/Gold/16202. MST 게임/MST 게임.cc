@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <cstdio>
 #include <vector>
 
@@ -6,8 +5,6 @@ using namespace std;
 
 struct Edge {
   int u, v, w;
-
-  bool operator>(const Edge& other) const { return w > other.w; }
 };
 
 vector<int> p;
@@ -29,10 +26,9 @@ int main() {
 
     scanf("%d%d", &u, &v);
     --u, --v;
-    edges[i] = {u, v, i + 1};
+    edges[M - i - 1] = {u, v, i + 1};
   }
 
-  sort(edges.begin(), edges.end(), greater());
   while (K) {
     int score = 0;
 
