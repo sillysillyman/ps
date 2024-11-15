@@ -1,4 +1,5 @@
 #include <cstdio>
+#include <numeric>
 #include <vector>
 
 using namespace std;
@@ -20,7 +21,6 @@ int main() {
   scanf("%d%d%d", &N, &M, &K);
   p.resize(N);
   edges.resize(M);
-  for (int i = 0; i < N; i++) p[i] = i;
   for (int i = 0; i < M; i++) {
     int u, v;
 
@@ -32,7 +32,7 @@ int main() {
   while (K) {
     int score = 0;
 
-    for (int i = 0; i < N; i++) p[i] = i;
+    iota(p.begin(), p.end(), 0);
     for (int i = M - 1; i >= 0; i--) {
       auto [u, v, w] = edges[i];
 
