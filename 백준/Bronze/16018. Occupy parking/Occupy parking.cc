@@ -1,10 +1,9 @@
 #include <cstdio>
 
+int N, cnt;
 char yesterday[101], today[101];
 
 int main() {
-  int N, cnt = 0;
-
   scanf("%d", &N);
   for (int i = 0; i < N; i++) scanf(" %c", &yesterday[i]);
   for (int i = 0; i < N; i++) scanf(" %c", &today[i]);
