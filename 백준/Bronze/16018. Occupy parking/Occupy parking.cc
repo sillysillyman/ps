@@ -1,12 +1,12 @@
 #include <cstdio>
 
 int N, cnt;
-char yesterday[101], today[101];
+char y[101], t[101];
 
 int main() {
   scanf("%d", &N);
-  for (int i = 0; i < N; i++) scanf(" %c", &yesterday[i]);
-  for (int i = 0; i < N; i++) scanf(" %c", &today[i]);
-  for (int i = 0; i < N; i++) cnt += (yesterday[i] == 'C') & (today[i] == 'C');
+  for (int i = 0; i < N; i++) scanf(" %c", &y[i]);
+  for (int i = 0; i < N; i++) scanf(" %c", &t[i]);
+  for (int i = 0; i < N; i++) cnt += (y[i] == 'C') & (t[i] == 'C');
   printf("%d", cnt);
 }
