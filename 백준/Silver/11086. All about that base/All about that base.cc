@@ -22,7 +22,7 @@ long long convert_to_decimal(string& num, int base) {
     power *= base;
   }
 
-  return res < 1 ? -1 : res;
+  return res;
 }
 
 int main() {
