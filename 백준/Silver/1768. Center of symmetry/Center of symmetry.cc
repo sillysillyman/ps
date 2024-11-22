@@ -35,7 +35,7 @@ int main() {
       scanf("%lf%lf", &x, &y);
       x_sum += x;
       y_sum += y;
-      points.insert(Point{x, y});
+      points.insert({x, y});
     }
 
     bool flag = true;
