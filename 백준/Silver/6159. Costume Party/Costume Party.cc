@@ -16,10 +16,9 @@ int main() {
 
   int left = 0, right = N - 1;
   while (left < right) {
-    if (arr[left] + arr[right] <= S) {
-      cnt += right - left;
-      ++left;
-    } else
+    if (arr[left] + arr[right] <= S)
+      cnt += right - left++;
+    else
       --right;
   }
   cout << cnt;
