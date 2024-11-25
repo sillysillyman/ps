@@ -1,16 +1,16 @@
 #include <cstdio>
 
-int board[3][3];
+int b[3][3];
 
 bool does_win(int p) {
-  return (board[0][0] == p && board[0][1] == p && board[0][2] == p) ||
-         (board[1][0] == p && board[1][1] == p && board[1][2] == p) ||
-         (board[2][0] == p && board[2][1] == p && board[2][2] == p) ||
-         (board[0][0] == p && board[1][0] == p && board[2][0] == p) ||
-         (board[0][1] == p && board[1][1] == p && board[2][1] == p) ||
-         (board[0][2] == p && board[1][2] == p && board[2][2] == p) ||
-         (board[0][0] == p && board[1][1] == p && board[2][2] == p) ||
-         (board[0][2] == p && board[1][1] == p && board[2][0] == p);
+  return (b[0][0] == p && b[0][1] == p && b[0][2] == p) ||
+         (b[1][0] == p && b[1][1] == p && b[1][2] == p) ||
+         (b[2][0] == p && b[2][1] == p && b[2][2] == p) ||
+         (b[0][0] == p && b[1][0] == p && b[2][0] == p) ||
+         (b[0][1] == p && b[1][1] == p && b[2][1] == p) ||
+         (b[0][2] == p && b[1][2] == p && b[2][2] == p) ||
+         (b[0][0] == p && b[1][1] == p && b[2][2] == p) ||
+         (b[0][2] == p && b[1][1] == p && b[2][0] == p);
 }
 
 int main() {
@@ -19,7 +19,7 @@ int main() {
 
   scanf("%d", &p);
   while (~scanf("%d%d", &x, &y)) {
-    board[--x][--y] = p;
+    b[--x][--y] = p;
     if (!has_winner && does_win(p)) {
       has_winner = true;
       printf("%d", p);
