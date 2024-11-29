@@ -15,10 +15,9 @@ int main() {
       int D1, D2;
 
       p %= P;
-      if (trapped[p]) {
+      while (trapped[p]) {
         trapped[p++] = false;
-        ++N;
-        continue;
+        p %= P;
       }
       scanf("%d%d", &D1, &D2);
       pos[p] += D1 + D2;
