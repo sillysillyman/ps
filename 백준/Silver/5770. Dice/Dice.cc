@@ -22,7 +22,7 @@ int main() {
       scanf("%d%d", &D1, &D2);
       pos[p] += D1 + D2;
       if (!winner && pos[p] > S) winner = p + 1;
-      if (pos[p] == T1 || pos[p] == T2 || pos[p] == T3) trapped[p] = true;
+      trapped[p] = pos[p] == T1 || pos[p] == T2 || pos[p] == T3;
       ++p;
     }
     printf("%d\n", winner);
