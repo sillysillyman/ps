@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <cstdio>
 
 int main() {
@@ -6,11 +5,8 @@ int main() {
 
   while (scanf("%d%d", &P, &S) && P && S) {
     int T1, T2, T3, N, winner = 0;
-    bool trapped[10];
-    int pos[10];
-
-    std::fill(trapped, trapped + P, false);
-    std::fill(pos, pos + P, 0);
+    bool trapped[10] = {};
+    int pos[10] = {};
 
     scanf("%d%d%d%d", &T1, &T2, &T3, &N);
 
