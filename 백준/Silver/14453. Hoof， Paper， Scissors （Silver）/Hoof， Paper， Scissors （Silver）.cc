@@ -4,34 +4,36 @@
 
 using namespace std;
 
-tuple<int, int, int> arr[100'001];
+int h, p, s;
+char g[100'000];
 
 int main() {
   int N;
 
   scanf("%d", &N);
-  arr[0] = {0, 0, 0};
-  for (int i = 1; i <= N; i++) {
-    char gesture;
-
-    scanf(" %c", &gesture);
-    arr[i] = arr[i - 1];
-    if (gesture == 'H')
-      ++get<0>(arr[i]);
-    else if (gesture == 'P')
-      ++get<1>(arr[i]);
+  for (int i = 0; i < N; i++) {
+    scanf(" %c", &g[i]);
+    if (g[i] == 'H')
+      ++h;
+    else if (g[i] == 'P')
+      ++p;
     else
-      ++get<2>(arr[i]);
+      ++s;
   }
 
-  int max_win = max({get<0>(arr[N]), get<1>(arr[N]), get<2>(arr[N])});
-  for (int i = 0; i <= N; i++)
-    max_win = max({max_win,
-                   get<0>(arr[i]) + max(get<1>(arr[N]) - get<1>(arr[i]),
-                                        get<2>(arr[N]) - get<2>(arr[i])),
-                   get<1>(arr[i]) + max(get<0>(arr[N]) - get<0>(arr[i]),
-                                        get<2>(arr[N]) - get<2>(arr[i])),
-                   get<2>(arr[i]) + max(get<0>(arr[N]) - get<0>(arr[i]),
-                                        get<1>(arr[N]) - get<1>(arr[i]))});
+  int max_win = max({h, p, s});
+  int cur_h = 0, cur_p = 0, cur_s = 0;
+  for (int i = 0; i < N; i++) {
+    if (g[i] == 'H')
+      ++cur_h;
+    else if (g[i] == 'P')
+      ++cur_p;
+    else
+      ++cur_s;
+
+    max_win = max({max_win, cur_h + max(p - cur_p, s - cur_s),
+                   cur_p + max(h - cur_h, s - cur_s),
+                   cur_s + max(h - cur_h, p - cur_p)});
+  }
   printf("%d", max_win);
 }
