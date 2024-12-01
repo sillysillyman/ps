@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 using ll = long long;
@@ -7,7 +6,7 @@ using ll = long long;
 ll tree[4'000'001];
 
 ll sum(int node, int start, int end, int left, int right) {
-  if (right < start || left > end) return 0;
+  if (right < start || end < left) return 0;
   if (left <= start && end <= right) return tree[node];
 
   int mid = (start + end) / 2;
