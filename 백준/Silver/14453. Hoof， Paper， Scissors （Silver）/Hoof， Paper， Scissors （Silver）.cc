@@ -1,6 +1,5 @@
 #include <algorithm>
 #include <cstdio>
-#include <tuple>
 
 using namespace std;
 
