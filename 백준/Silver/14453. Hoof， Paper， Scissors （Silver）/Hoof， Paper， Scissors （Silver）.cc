@@ -1,5 +1,5 @@
 #include <algorithm>
-#include <cstdio>
+#include <iostream>
 
 using namespace std;
 
@@ -7,11 +7,14 @@ int h, p, s;
 char g[100'000];
 
 int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(nullptr);
+
   int N;
 
-  scanf("%d", &N);
+  cin >> N;
   for (int i = 0; i < N; i++) {
-    scanf(" %c", &g[i]);
+    cin >> g[i];
     if (g[i] == 'H')
       ++h;
     else if (g[i] == 'P')
@@ -34,5 +37,5 @@ int main() {
                    cur_p + max(h - cur_h, s - cur_s),
                    cur_s + max(h - cur_h, p - cur_p)});
   }
-  printf("%d", max_win);
+  cout << max_win;
 }
