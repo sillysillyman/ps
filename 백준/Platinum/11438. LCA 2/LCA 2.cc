@@ -4,26 +4,24 @@
 using namespace std;
 
 const int LOG = 17;
-const int MAX = 100'000;
-int depths[MAX + 1];
-int parents[MAX + 1][LOG + 1];
-vector<int> tree[MAX + 1];
+const int MAX_N = 100'000;
+int depths[MAX_N + 1];
+int parents[MAX_N + 1][LOG + 1];
+vector<int> tree[MAX_N + 1];
 
 void dfs(int node, int parent) {
   depths[node] = depths[parent] + 1;
   parents[node][0] = parent;
   for (int i = 1; i <= LOG; i++)
     parents[node][i] = parents[parents[node][i - 1]][i - 1];
-  for (int child : tree[node]) {
+  for (int child : tree[node])
     if (child != parent) dfs(child, node);
-  }
 }
 
 int lca(int u, int v) {
   if (depths[u] < depths[v]) swap(u, v);
-  for (int i = LOG; i >= 0; i--) {
+  for (int i = LOG; i >= 0; i--)
     if (depths[u] - depths[v] >= (1 << i)) u = parents[u][i];
-  }
   if (u == v) return u;
   for (int i = LOG; i >= 0; i--) {
     if (parents[u][i] != parents[v][i]) {
@@ -36,7 +34,7 @@ int lca(int u, int v) {
 
 int main() {
   ios_base::sync_with_stdio(false);
-  cin.tie(NULL);
+  cin.tie(nullptr);
 
   int N, M;
 
