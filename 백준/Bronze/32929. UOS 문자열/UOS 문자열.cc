@@ -2,8 +2,8 @@
 
 int main() {
   int x;
-  const char *uos = "UOS";
+  char *s = "UOS";
 
   scanf("%d", &x);
-  printf("%c", uos[--x % 3]);
+  printf("%c", s[--x % 3]);
 }
