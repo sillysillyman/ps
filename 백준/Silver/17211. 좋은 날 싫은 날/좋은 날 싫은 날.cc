@@ -1,17 +1,17 @@
 #include <cstdio>
 
 int main() {
-  int N, mood;
-  double probability[4];
+  int N, m;
+  double p[4];
 
-  scanf("%d%d", &N, &mood);
-  for (int i = 0; i < 4; i++) scanf("%lf", &probability[i]);
+  scanf("%d%d", &N, &m);
+  for (int i = 0; i < 4; i++) scanf("%lf", &p[i]);
 
-  double good = !mood, bad = mood;
+  double g = !m, b = m;
   for (int i = 0; i < N; i++) {
-    double prev_good = good;
-    good = good * probability[0] + bad * probability[2];
-    bad = prev_good * probability[1] + bad * probability[3];
+    double prev_g = g;
+    g = g * p[0] + b * p[2];
+    b = prev_g * p[1] + b * p[3];
   }
-  printf("%d\n%d", int(1000 * good), int(1000 * bad));
+  printf("%d\n%d", int(1000 * g), int(1000 * b));
 }
