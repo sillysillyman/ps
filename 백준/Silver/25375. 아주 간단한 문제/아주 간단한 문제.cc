@@ -1,13 +1,18 @@
-#include <cstdio>
+#include <iostream>
+
+using namespace std;
 
 int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(nullptr);
+
   int Q;
 
-  scanf("%d", &Q);
+  cin >> Q;
   while (Q--) {
     long long a, b;
 
-    scanf("%lld%lld", &a, &b);
-    printf("%d\n", 2 * a <= b && !(b % a));
+    cin >> a >> b;
+    cout << (2 * a <= b && !(b % a)) << '\n';
   }
 }
