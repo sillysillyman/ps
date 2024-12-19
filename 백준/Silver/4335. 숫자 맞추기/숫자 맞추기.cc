@@ -1,26 +1,22 @@
-#include <algorithm>
 #include <cstdio>
-#include <cstring>
-
-using namespace std;
 
 int main() {
   int n;
   int arr[11];
 
-  fill(arr + 1, arr + 11, 1);
+  for (int i = 1; i < 11; i++) arr[i] = 1;
 
   while (scanf("%d", &n) && n) {
-    char s[5];
+    char c;
 
-    scanf("%*s %s", s);
+    scanf("%*s %c%*s", &c);
 
-    if (!strcmp(s, "on")) {
+    if (c == 'o') {
       printf("%s\n", arr[n] ? "Stan may be honest" : "Stan is dishonest");
-      fill(arr + 1, arr + 11, 1);
-    } else if (!(strcmp(s, "low")))
-      fill(arr + 1, arr + n + 1, 0);
+      for (int i = 1; i < 11; i++) arr[i] = 1;
+    } else if (c == 'l')
+      for (int i = 1; i <= n; i++) arr[i] = 0;
     else
-      fill(arr + n, arr + 11, 0);
+      for (int i = n; i <= 10; i++) arr[i] = 0;
   }
 }
