@@ -1,20 +1,38 @@
 #include <cstdio>
 
-char S[100'001];
+char S[26];
 
 int main() {
   int N;
+  scanf("%d", &N);
 
-  scanf("%d %s", &N, S);
-  if (N < 26)
+  if (N < 26) {
+    scanf("%s", S);
     printf("%s", S);
-  else {
+  } else {
+    fgetc(stdin);
+    fread(S, 1, 11, stdin);
+
+    char c;
+    bool flag = false;
     int cnt = 0;
-    for (int i = 11; i < N - 11; i++)
-      if (S[i] == '.') ++cnt;
-    if (!cnt || (cnt == 1 && (S[11] == '.' || S[N - 12] == '.')))
-      printf("%.11s...%.11s", S, S + N - 11);
+    int middle = N - 22;
+
+    for (int i = 0; i < N - 22; i++) {
+      c = fgetc(stdin);
+      if (c == '.') {
+        if (i == 0 || i == N - 23) flag = true;
+        ++cnt;
+      }
+    }
+
+    fread(S + 14, 1, 11, stdin);
+
+    if (!cnt || (cnt == 1 && flag))
+      for (int i = 11; i < 14; i++) S[i] = '.';
     else
-      printf("%.9s......%.10s", S, S + N - 10);
+      for (int i = 9; i < 15; i++) S[i] = '.';
+
+    printf("%s", S);
   }
 }
