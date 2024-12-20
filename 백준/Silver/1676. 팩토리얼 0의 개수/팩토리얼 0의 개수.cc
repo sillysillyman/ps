@@ -1,14 +1,8 @@
-#include <iostream>
-
-using namespace std;
+#include <cstdio>
 
 int main() {
-    int N;
-    int zero_cnt = 0;
+  int N;
 
-    cin >> N;
-    zero_cnt += N/5;
-    zero_cnt += N/25;
-    zero_cnt += N/125;
-    cout << zero_cnt;
+  scanf("%d", &N);
+  printf("%d", N / 5 + N / 25 + N / 125);
 }
