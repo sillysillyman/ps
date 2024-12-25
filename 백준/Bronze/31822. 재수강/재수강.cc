@@ -1,15 +1,9 @@
 #include <cstdio>
-#include <cstring>
 
-int N, cnt;
+int a, b, c;
 
 int main() {
-  char s[6], t[6];
-
-  scanf("%5s%*s %d", s, &N);
-  while (N--) {
-    scanf(" %5s%*s", t);
-    if (!strcmp(t, s)) ++cnt;
-  }
-  printf("%d", cnt);
+  scanf("%5d%*s %*d", &a);
+  while (~scanf(" %5d%*s", &b)) c += a == b;
+  printf("%d", c);
 }
