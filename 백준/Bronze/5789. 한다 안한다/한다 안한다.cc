@@ -10,7 +10,7 @@ int main() {
 
     scanf("%s", s);
     int len = strlen(s);
-    printf("%s\n",
-           (s[len / 2] - '0') ^ (s[len / 2 - 1] - '0') ? "Do-it-Not" : "Do-it");
+    printf("Do-it%s\n",
+           (s[len / 2] - '0') ^ (s[len / 2 - 1] - '0') ? "-Not" : "");
   }
 }
