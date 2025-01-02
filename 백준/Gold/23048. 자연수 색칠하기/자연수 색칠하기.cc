@@ -18,6 +18,8 @@ int main() {
     colors[i] = ++color;
     for (int j = i; j <= N; j += i) colors[j] = color;
   }
-  cout << color << '\n';
-  for (int i = 1; i <= N; i++) cout << colors[i] << ' ';
+
+  string output = "";
+  for (int i = 1; i <= N; i++) output += to_string(colors[i]) + ' ';
+  cout << color << '\n' << output;
 }
