@@ -15,6 +15,7 @@ bool dfs(int curr, int depth) {
   for (int& next : graph[curr]) {
     if (visited[next]) continue;
     flag |= dfs(next, depth + 1);
+    if (flag) break;
   }
   visited[curr] = false;
 
