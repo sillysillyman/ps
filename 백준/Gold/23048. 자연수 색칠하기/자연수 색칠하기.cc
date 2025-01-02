@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int colors[500'001];
+unsigned short colors[500'001];
 
 int main() {
   ios_base::sync_with_stdio(false);
