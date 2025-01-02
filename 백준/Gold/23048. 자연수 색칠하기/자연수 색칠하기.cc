@@ -16,7 +16,7 @@ int main() {
   for (int i = 2; i <= N; i++) {
     if (colors[i]) continue;
     colors[i] = ++color;
-    for (int j = 2; i * j <= N; j++) colors[i * j] = color;
+    for (int j = i; j <= N; j += i) colors[j] = color;
   }
   cout << color << '\n';
   for (int i = 1; i <= N; i++) cout << colors[i] << ' ';
