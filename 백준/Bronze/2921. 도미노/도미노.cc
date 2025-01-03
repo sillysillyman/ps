@@ -3,5 +3,5 @@
 int main() {
   int N;
   scanf("%d", &N);
-  printf("%d", (N * N * N + 3 * N * N + 2 * N) / 2);
+  printf("%d", N * (N + 1) * (N + 2) / 2);
 }
