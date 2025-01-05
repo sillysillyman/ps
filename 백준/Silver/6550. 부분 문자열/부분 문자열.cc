@@ -1,17 +1,13 @@
-#include <iostream>
+#include <cstdio>
+#include <cstring>
 
-using namespace std;
-
-string s, t;
+char s[100'001], t[100'001];
 
 int main() {
-  ios_base::sync_with_stdio(false);
-  cin.tie(nullptr);
-
-  while (cin >> s >> t) {
+  while (~scanf(" %s %s", s, t)) {
     int j = 0;
-    for (int i = 0; i < t.size(); i++)
+    for (int i = 0; t[i]; i++)
       if (s[j] == t[i]) ++j;
-    cout << (j == s.length() ? "Yes" : "No") << '\n';
+    printf("%s\n", j == strlen(s) ? "Yes" : "No");
   }
 }
