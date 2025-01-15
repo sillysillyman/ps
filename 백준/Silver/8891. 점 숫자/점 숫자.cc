@@ -14,8 +14,7 @@ int pairing(Point p) { return (p.x + p.y - 2) * (p.x + p.y - 1) / 2 + p.x; }
 
 Point unpairing(int z) {
   int s = 2;
-  while ((s - 2) * (s - 1) / 2 < z) s++;
-  --s;
+  while (s * (s - 1) / 2 < z) s++;
   int x = z - (s - 2) * (s - 1) / 2;
   return {x, s - x};
 }
