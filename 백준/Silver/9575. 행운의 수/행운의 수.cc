@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <cstdio>
 
 int arr[62] = {5,     8,     55,    58,    85,    88,    555,   558,   585,
