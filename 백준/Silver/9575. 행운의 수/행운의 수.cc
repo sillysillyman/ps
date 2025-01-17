@@ -28,11 +28,9 @@ int main() {
     std::map<int, int> cnts;
     for (int i = 0; i < N; i++)
       for (int j = 0; j < M; j++)
-        for (int k = 0; k < K; k++) ++cnts[A[i] + B[j] + C[k]];
+        for (int k = 0; k < K; k++)
+          if (int num = A[i] + B[j] + C[k]; is_lucky_number(num)) ++cnts[num];
 
-    int cnt = 0;
-    for (auto [k, v] : cnts)
-      if (is_lucky_number(k)) ++cnt;
-    printf("%d\n", cnt);
+    printf("%zu\n", cnts.size());
   }
 }
