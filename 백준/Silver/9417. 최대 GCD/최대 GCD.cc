@@ -8,10 +8,11 @@ int main() {
 
   scanf("%d", &N);
   while (N--) {
+    char c;
     int idx = 0;
 
-    do scanf("%d", &arr[idx++]);
-    while (getchar() != '\n');
+    while (scanf("%d%c", &arr[idx++], &c) && c != '\n')
+      ;
 
     int max_gcd = 1;
     for (int i = 0; i < idx - 1; i++)
