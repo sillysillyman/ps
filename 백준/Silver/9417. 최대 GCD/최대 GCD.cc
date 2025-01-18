@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <numeric>
 
-int arr[100];
+int arr[99];
 
 int main() {
   int N;
