@@ -2,7 +2,7 @@
 
 using namespace std;
 
-long long arr[100'001];
+long long sum, ans;
 
 int main() {
   ios_base::sync_with_stdio(false);
@@ -10,12 +10,11 @@ int main() {
 
   int N;
   cin >> N;
-  for (int i = 1; i <= N; i++) {
-    cin >> arr[i];
-    arr[i] += arr[i - 1];
-  }
 
-  long long sum = 0;
-  for (int i = 1; i <= N; i++) sum += (arr[i] - arr[i - 1]) * (arr[N] - arr[i]);
-  cout << sum;
+  for (int num, i = 0; i < N; i++) {
+    cin >> num;
+    ans += sum * num;
+    sum += num;
+  }
+  cout << ans;
 }
