@@ -11,7 +11,8 @@ int main() {
   int N;
   cin >> N;
 
-  for (int num, i = 0; i < N; i++) {
+  while (N--) {
+    int num;
     cin >> num;
     ans += sum * num;
     sum += num;
