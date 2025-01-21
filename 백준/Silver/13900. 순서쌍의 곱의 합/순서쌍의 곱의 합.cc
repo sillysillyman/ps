@@ -1,16 +1,21 @@
-#include <cstdio>
+#include <iostream>
+
+using namespace std;
 
 long long arr[100'001];
 
 int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(nullptr);
+
   int N;
-  scanf("%d", &N);
+  cin >> N;
   for (int i = 1; i <= N; i++) {
-    scanf("%lld", &arr[i]);
+    cin >> arr[i];
     arr[i] += arr[i - 1];
   }
 
   long long sum = 0;
   for (int i = 1; i <= N; i++) sum += (arr[i] - arr[i - 1]) * (arr[N] - arr[i]);
-  printf("%lld", sum);
+  cout << sum;
 }
