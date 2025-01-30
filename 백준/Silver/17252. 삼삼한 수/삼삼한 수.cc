@@ -3,7 +3,7 @@
 int main() {
   int N;
   scanf("%d", &N);
-  if (!N) return puts("NO"), 0;
+  if (!N) return printf("NO"), 0;
 
   long long n = 1;
   while (3 * n <= N) n *= 3;
