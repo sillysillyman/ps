@@ -7,7 +7,7 @@ int main() {
 
   long long n = 1;
   while (3 * n <= N) n *= 3;
-  while (n && N > 0) {
+  while (n && N) {
     if (N >= n) N -= n;
     n /= 3;
   }
