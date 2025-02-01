@@ -8,18 +8,15 @@ bool is_prime(int n) {
 }
 
 void solve(int n) {
-  if (n & 1) {
-    for (int i = 2; i < n / 2; i++)
-      if (is_prime(i) && is_prime(n - i - 5)) {
-        printf("2 3 %d %d\n", i, n - i - 5);
-        return;
-      }
-  } else {
-    for (int i = 2; i < n / 2; i++)
-      if (is_prime(i) && is_prime(n - i - 4)) {
-        printf("2 2 %d %d\n", i, n - i - 4);
-        return;
-      }
+  for (int i = 2; i < n / 2; i++) {
+    if (!is_prime(i)) continue;
+    if (n & 1 && is_prime(n - i - 5)) {
+      printf("2 3 %d %d\n", i, n - i - 5);
+      return;
+    } else if (!(n & 1) && is_prime(n - i - 4)) {
+      printf("2 2 %d %d\n", i, n - i - 4);
+      return;
+    }
   }
   printf("Impossible.\n");
 }
