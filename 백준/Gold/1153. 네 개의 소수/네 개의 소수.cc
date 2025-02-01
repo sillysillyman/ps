@@ -11,9 +11,7 @@ int main() {
   int N;
   scanf("%d", &N);
 
-  if (N < 8)
-    return printf("-1"), 0;
-  else if (N & 1) {
+  if (N & 1) {
     for (int i = 2; i < N / 2; i++)
       if (is_prime(i) && is_prime(N - i - 5))
         return printf("2 3 %d %d", i, N - i - 5), 0;
