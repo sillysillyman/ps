@@ -21,7 +21,7 @@ int visited[50][50];
 bool is_inside(Pos p) { return 0 <= p.x && p.x < N && 0 <= p.y && p.y < N; }
 
 int bfs() {
-  fill(&visited[0][0], &visited[N - 1][N], MAX_TIME);
+  fill(&visited[0][0], &visited[N - 1][N], -1);
 
   queue<pair<Pos, int>> q;
   for (int i = 0; i < viruses.size(); i++) {
@@ -38,10 +38,11 @@ int bfs() {
     for (int i = 0; i < 4; i++) {
       Pos next = {curr.x + dx[i], curr.y + dy[i]};
 
-      if (is_inside(next) && t + 1 < visited[next.x][next.y] &&
+      if (is_inside(next) && visited[next.x][next.y] == -1 &&
           graph[next.x][next.y] != 1) {
+        int next_t = !graph[next.x][next.y] ? t + 1 : t;
         q.push({next, t + 1});
-        visited[next.x][next.y] = t + 1;
+        visited[next.x][next.y] = next_t;
       }
     }
   }
@@ -49,7 +50,7 @@ int bfs() {
   int time = 0;
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < N; j++) {
-      if (visited[i][j] == MAX_TIME && !graph[i][j]) return MAX_TIME;
+      if (visited[i][j] == -1 && !graph[i][j]) return MAX_TIME;
       if (!graph[i][j]) time = max(time, visited[i][j]);
     }
   }
