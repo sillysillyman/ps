@@ -21,6 +21,8 @@ int visited[50][50];
 bool is_inside(Pos p) { return 0 <= p.x && p.x < N && 0 <= p.y && p.y < N; }
 
 int bfs() {
+  fill(&visited[0][0], &visited[N - 1][N], MAX_TIME);
+
   queue<pair<Pos, int>> q;
   for (int i = 0; i < viruses.size(); i++) {
     if (flag[i]) {
@@ -70,22 +72,8 @@ int main() {
   fill(flag.end() - M, flag.end(), 1);
 
   int min_time = MAX_TIME;
-  int t = 1;
-  do {
-    // printf("t: %d\n", t);
-    // printf("flag: ");
-    // for (int i = 0; i < flag.size(); i++) printf("%d ", flag[i]);
-    // printf("\n");
-
-    fill(&visited[0][0], &visited[N - 1][N], MAX_TIME);
-    min_time = min(min_time, bfs());
-    // printf("min_time = %d\n", min_time);
-    // for (int i = 0; i < N; i++) {
-    //   for (int j = 0; j < N; j++) printf("%d ", visited[i][j]);
-    //   printf("\n");
-    // }
-    // printf("\n");
-  } while (next_permutation(flag.begin(), flag.end()));
+  do min_time = min(min_time, bfs());
+  while (next_permutation(flag.begin(), flag.end()));
 
   printf("%d", min_time == MAX_TIME ? -1 : min_time);
 }
