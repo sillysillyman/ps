@@ -40,9 +40,8 @@ int bfs() {
 
       if (is_inside(next) && visited[next.x][next.y] == -1 &&
           graph[next.x][next.y] != 1) {
-        int next_t = !graph[next.x][next.y] ? t + 1 : t;
         q.push({next, t + 1});
-        visited[next.x][next.y] = next_t;
+        visited[next.x][next.y] = t + 1;
       }
     }
   }
