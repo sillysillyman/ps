@@ -24,27 +24,7 @@ int bfs(Pos src, Pos dest) {
 
   while (!q.empty()) {
     auto [curr, cnt] = q.front();
-
     q.pop();
-
-    // printf("cnt = %d\n", cnt);
-    // for (int i = 0; i < M; i++) {
-    //   for (int j = 0; j < N; j++) {
-    //     if (i == curr.x && j == curr.y) {
-    //       if (curr.dir == 1)
-    //         printf("> ");
-    //       else if (curr.dir == 2)
-    //         printf("< ");
-    //       else if (curr.dir == 3)
-    //         printf("v ");
-    //       else
-    //         printf("^ ");
-    //     } else
-    //       printf("%d ", graph[i][j]);
-    //   }
-    //   printf("\n");
-    // }
-    // printf("\n");
 
     if (curr == dest) return cnt;
 
@@ -68,8 +48,6 @@ int bfs(Pos src, Pos dest) {
       }
     }
     for (int k = 1; k <= 3; k++) {
-      //   int nx = curr.x + k * (curr.dir == 3 ? 1 : curr.dir == 4 ? -1 : 0);
-      //   int ny = curr.y + k * (curr.dir == 1 ? 1 : curr.dir == 2 ? -1 : 0);
       Pos next = {curr.x + k * (curr.dir == 3   ? 1
                                 : curr.dir == 4 ? -1
                                                 : 0),
