@@ -1,10 +1,11 @@
 #include <iostream>
-#include <numeric>
 
 using namespace std;
 using ll = long long;
 
 ll arr[100'000];
+
+ll gcd(ll a, ll b) { return b ? gcd(b, a % b) : a; }
 
 int main() {
   ios_base::sync_with_stdio(false);
