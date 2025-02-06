@@ -1,19 +1,25 @@
-#include <cstdio>
+#include <iostream>
 #include <numeric>
 
-long long arr[100'000];
+using namespace std;
+using ll = long long;
+
+ll arr[100'000];
 
 int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(nullptr);
+
   int n;
-  scanf("%d", &n);
-  for (int i = 0; i < n; i++) scanf("%lld", &arr[i]);
+  cin >> n;
+  for (int i = 0; i < n; i++) cin >> arr[i];
   for (int i = 0; i < n; i++) {
-    long long b;
-    scanf("%lld", &b);
+    ll b;
+    cin >> b;
     arr[i] -= b;
   }
 
-  long long m = arr[0];
-  for (int i = 1; i < n; i++) m = std::gcd(m, arr[i]);
-  printf("%lld", m);
+  ll m = arr[0];
+  for (int i = 1; i < n; i++) m = gcd(m, arr[i]);
+  cout << m;
 }
