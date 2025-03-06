@@ -63,27 +63,14 @@ int bfs(Pos src_red, Pos src_blue) {
         return cnt + 1;
 
       if (nred == nblue) {
-        if (dx[i] == -1) {
-          if (red.x < blue.x)
-            ++nblue.x;
-          else
-            ++nred.x;
-        } else if (dx[i] == 1) {
-          if (red.x < blue.x)
-            --nred.x;
-          else
-            --nblue.x;
-        } else if (dy[i] == -1) {
-          if (red.y < blue.y)
-            ++nblue.y;
-          else
-            ++nred.y;
-        } else {
-          if (red.y < blue.y)
-            --nred.y;
-          else
-            --nblue.y;
-        }
+        if (dx[i] == -1)
+          red.x < blue.x ? ++nblue.x : ++nred.x;
+        else if (dx[i] == 1)
+          red.x < blue.x ? --nred.x : --nblue.x;
+        else if (dy[i] == -1)
+          red.y < blue.y ? ++nblue.y : ++nred.y;
+        else
+          red.y < blue.y ? --nred.y : --nblue.y;
       }
 
       if (visited.find({nred, nblue}) == visited.end()) {
