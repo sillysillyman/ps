@@ -18,7 +18,7 @@ struct Pos {
 };
 
 int N, M;
-Pos red, blue, hole;
+Pos red, blue;
 int dx[4] = {-1, 0, 0, 1};
 int dy[4] = {0, -1, 1, 0};
 char graph[10][10];
@@ -87,9 +87,6 @@ int bfs(Pos src_red, Pos src_blue) {
       }
 
       if (visited.find({nred, nblue}) == visited.end()) {
-        // printf("nred: {%d, %d}\n", nred.x, nred.y);
-        // printf("nblue: {%d, %d}\n", nblue.x, nblue.y);
-        // printf("\n");
         q.push({nred, nblue, cnt + 1});
         visited.insert({nred, nblue});
       }
@@ -108,15 +105,8 @@ int main() {
         red = {i, j};
       else if (graph[i][j] == 'B')
         blue = {i, j};
-      else if (graph[i][j] == 'O')
-        hole = {i, j};
     }
   }
-
-//   for (int i = 0; i < N; i++) {
-//     for (int j = 0; j < M; j++) printf("%c", graph[i][j]);
-//     printf("\n");
-//   }
 
   printf("%d", bfs(red, blue));
 }
