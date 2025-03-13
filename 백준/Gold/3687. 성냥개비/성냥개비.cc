@@ -11,8 +11,8 @@ int main() {
   for (int i = 1; i < 9; i++) dp[i] = arr[i];
   dp[6] = 6;
   for (int i = 9; i < 101; i++) {
-    dp[i] = dp[i - 2] * 10 + 1;
-    for (int j = 3; j < 8; j++)
+    dp[i] = ~(1LL << 63);
+    for (int j = 2; j < 8; j++)
       dp[i] = std::min(dp[i], 10 * dp[i - j] + arr[j]);
   }
 
