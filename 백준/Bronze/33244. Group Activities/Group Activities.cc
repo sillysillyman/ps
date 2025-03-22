@@ -1,16 +1,21 @@
-#include <cstdio>
+#include <iostream>
 #include <numeric>
 
+using namespace std;
+
 int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(nullptr);
+
   int n;
-  scanf("%d", &n);
+  cin >> n;
 
   long long p = 1;
   while (n--) {
     long long i;
-    scanf("%lld", &i);
-    p = std::lcm(p, i);
+    cin >> i;
+    p = lcm(p, i);
   }
 
-  printf("%lld", p);
+  cout << p;
 }
