@@ -1,18 +1,23 @@
-#include <cstdio>
+#include <iostream>
+
+using namespace std;
 
 int arr[100'001];
 
 int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(nullptr);
+
   int N, M;
-  scanf("%d", &N);
+  cin >> N;
   for (int i = 1; i <= N; i++) {
-    scanf("%d", &arr[i]);
+    cin >> arr[i];
     arr[i] += arr[i - 1];
   }
-  scanf("%d", &M);
+  cin >> M;
   while (M--) {
     int i, j;
-    scanf("%d%d", &i, &j);
-    printf("%d\n", arr[j] - arr[i - 1]);
+    cin >> i >> j;
+    cout << arr[j] - arr[i - 1] << '\n';
   }
 }
