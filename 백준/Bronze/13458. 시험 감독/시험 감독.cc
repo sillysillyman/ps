@@ -2,7 +2,7 @@
 
 using namespace std;
 
-long long arr[(int)1e6];
+int arr[(int)1e6];
 
 int main() {
   ios_base::sync_with_stdio(false);
