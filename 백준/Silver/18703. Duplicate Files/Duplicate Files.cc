@@ -20,7 +20,7 @@ int main() {
       int id;
       string s;
       cin >> s >> id;
-      if (m.find(s) == m.end() || m.find(s) != m.end() && m[s] > id) m[s] = id;
+      if (m.find(s) == m.end() || m[s] > id) m[s] = id;
     }
 
     vector<int> ids;
