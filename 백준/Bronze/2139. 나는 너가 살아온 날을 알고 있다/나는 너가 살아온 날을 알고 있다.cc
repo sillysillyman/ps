@@ -2,7 +2,7 @@
 
 int main() {
   int d, m, y;
-  while (scanf("%d%d%d", &d, &m, &y) && (d || m || y)) {
+  while (scanf("%d%d%d", &d, &m, &y) && d) {
     int cnt = 0;
     bool flag = !(y % 4) && (y % 100) || !(y % 400);
     for (int i = 1; i < m; i++) {
