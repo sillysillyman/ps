@@ -9,7 +9,7 @@ int main() {
       if (i == 2)
         cnt += 28 + flag;
       else
-        cnt += i < 8 ? (i & 1 ? 31 : 30) : (i & 1 ? 30 : 31);
+        cnt += i < 8 ? 30 + (i & 1) : 31 - (i & 1);
     }
     printf("%d\n", cnt + d);
   }
