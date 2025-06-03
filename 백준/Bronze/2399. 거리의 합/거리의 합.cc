@@ -1,5 +1,4 @@
 #include <algorithm>
-#include <cmath>
 #include <cstdio>
 
 long long arr[10'000];
