@@ -11,12 +11,6 @@ int main() {
   for (int i = 0; i < N; i++)
     for (int j = 0; j < M; j++) scanf("%1d", &B[i][j]);
 
-  if (N < 3 || M < 3) {
-    for (int i = 0; i < N; i++)
-      for (int j = 0; j < M; j++)
-        if (A[i][j] != B[i][j]) return printf("-1"), 0;
-    return printf("0"), 0;
-  }
   for (int i = 0; i < N - 2; i++) {
     for (int j = 0; j < M - 2; j++) {
       if (A[i][j] == B[i][j]) continue;
