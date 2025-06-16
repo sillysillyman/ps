@@ -1,7 +1,8 @@
 #include <cstdio>
 
+int N, T, B, t, b = 5e3;
+
 int main() {
-  int N, T, B, t = 0, b = 5e3;
   scanf("%d", &N);
   while (N--) {
     scanf("%d%d", &T, &B);
