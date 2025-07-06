@@ -2,15 +2,16 @@
 
 using namespace std;
 
-int arr[(int)1e6];
+int arr[(int)1e6 + 1] = {(int)-1e6};
 
 int main() {
   ios_base::sync_with_stdio(false);
   cin.tie(nullptr);
 
-  int k, n = 0;
-  while (cin >> k) arr[n++] = k;
-  for (int i = 1; i < n; i++)
-    if (arr[i - 1] > arr[i]) return cout << "Bad", 0;
-  cout << "Good";
+  int k, flag = 0, n = 1;
+  while (cin >> k) {
+    arr[n] = k;
+    if (arr[n - 1] > arr[n++]) flag = 1;
+  }
+  cout << (flag ? "Bad" : "Good");
 }
