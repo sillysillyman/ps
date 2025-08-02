@@ -7,9 +7,9 @@ int main() {
     int c, r;
     scanf("%d%d", &c, &r);
     for (int i = 0; i < r; i++) {
-      for (int j = 0; j < c; j++) printf("%c", 'X');
-      printf("\n");
+      for (int j = 0; j < c; j++) putchar('X');
+      putchar('\n');
     }
-    printf("\n");
+    putchar('\n');
   }
 }
