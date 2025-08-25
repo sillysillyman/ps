@@ -1,13 +1,13 @@
 #include <cstdio>
 
 int N;
-double q, y, QALY;
+double q, y, s;
 
 int main() {
   scanf("%d", &N);
   while (N--) {
     scanf("%lf%lf", &q, &y);
-    QALY += q * y;
+    s += q * y;
   }
-  printf("%.3lf", QALY);
+  printf("%.3lf", s);
 }
