@@ -1,7 +1,7 @@
 #include <cstdio>
 
 int main() {
-  long long L, T;
-  scanf("%lld%lld", &L, &T);
-  printf("%lld", 2 * T - L);
+  int L, T;
+  scanf("%d%d", &L, &T);
+  printf("%d", 2 * T - L);
 }
