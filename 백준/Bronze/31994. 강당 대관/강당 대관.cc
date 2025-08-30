@@ -1,12 +1,16 @@
-#include <algorithm>
-#include <iostream>
-#include <vector>
+#include <cstdio>
+#include <cstring>
 
-using namespace std;
+int M;
+char s[22], t[22];
 
 int main() {
-  vector<pair<int, string>> v(7);
-  for (auto &e : v) cin >> e.second >> e.first;
-  sort(v.begin(), v.end());
-  cout << v.back().second;
+  for (int x, i = 0; i < 7; i++) {
+    scanf(" %s%d", t, &x);
+    if (x > M) {
+      M = x;
+      strcpy(s, t);
+    }
+  }
+  printf("%s", s);
 }
