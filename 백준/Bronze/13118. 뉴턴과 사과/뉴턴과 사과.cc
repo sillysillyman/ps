@@ -1,10 +1,7 @@
 #include <cstdio>
 
 int main() {
-  int x;
-  int arr[4];
-  for (int i = 0; i < 4; i++) scanf("%d", &arr[i]);
-  scanf("%d%*d%*d", &x);
-  for (int i = 0; i < 4; i++) if (arr[i] == x) return printf("%d", i + 1), 0;
-  printf("0");
+  int a, b, c, d, x;
+  scanf("%d%d%d%d%d%*d%*d", &a, &b, &c, &d, &x);
+  printf("%d", x == a ? 1 : x == b ? 2 : x == c ? 3 : x == d ? 4 : 0);
 }
