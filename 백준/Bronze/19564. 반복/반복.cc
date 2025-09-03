@@ -2,9 +2,8 @@
 
 int main() {
   int K = 1;
-  char S[100'001];
-
+  char S[100001];
   scanf("%s", S);
-  for (int i = 1; S[i] != '\0'; i++) K += S[i - 1] >= S[i];
+  for (int i = 1; S[i]; i++) K += S[i - 1] >= S[i];
   printf("%d", K);
 }
