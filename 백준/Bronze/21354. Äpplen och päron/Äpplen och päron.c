@@ -1,0 +1,1 @@
+int main(A,P){scanf("%d%d",&A,&P);printf(7*A>13*P?"Axel":7*A<13*P?"Petra":"lika");}
