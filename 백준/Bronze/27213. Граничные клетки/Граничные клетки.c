@@ -1,0 +1,1 @@
+main(m,n){scanf("%d%d",&m,&n);printf("%d",m<2||n<2?m*n:2*(--m+--n));}
