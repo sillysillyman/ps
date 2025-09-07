@@ -1,4 +1,5 @@
 #include <cstdio>
+#include <cstring>
 
 int main() {
   int T, c;
@@ -7,7 +8,7 @@ int main() {
   while (T--) {
     c = 0;
     scanf("%s", s);
-    for (int i = 0; s[i]; i++) c += s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u';
+    for (int i = 0; s[i]; i++) c += !!strchr("aeiou", s[i]);
     printf("The number of vowels in %s is %d.\n", s, c);
   }
 }
