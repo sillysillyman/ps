@@ -1,0 +1,1 @@
+main(x,N){scanf("%d%d",&x,&N);while(N--)x=(x&1?2*x:x/2)^6;printf("%d",x);}
