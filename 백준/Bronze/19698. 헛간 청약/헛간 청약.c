@@ -1,1 +1,1 @@
-main(N,W,H,L,n){scanf("%d%d%d%d",&N,&W,&H,&L);n=W/L*(H/L);printf("%d",n>N?N:n);}
+main(N,W,H,L){scanf("%d%d%d%d",&N,&W,&H,&L);printf("%d",(W=W/L*(H/L))>N?N:W);}
