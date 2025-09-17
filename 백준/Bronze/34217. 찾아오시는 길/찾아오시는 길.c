@@ -1,0 +1,1 @@
+main(A,B,C,D){scanf("%d%d%d%d",&A,&B,&C,&D);printf(A+C<B+D?"Hanyang Univ.":A+C>B+D?"Yongdap":"Either");}
