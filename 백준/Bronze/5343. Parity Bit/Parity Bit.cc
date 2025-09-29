@@ -8,13 +8,8 @@ int main() {
   while (N--) {
     int e = 0;
     scanf("%s", b);
-    for (int c = 0, i = 0; b[i]; i++) {
-      if ((i + 1) % 8) c += b[i] == '1';
-      else {
-        e += (c & 1 && b[i] == '0') || (!(c & 1) && b[i] == '1');
-        c = 0;
-      }
-    }
+    for (int c = 0, i = 0; b[i]; i++)
+      (i + 1) % 8 ? c += b[i] == '1' : (e += (c & 1 && b[i] == '0') || (!(c & 1) && b[i] == '1'), c = 0);
     printf("%d\n", e);
   }
 }
