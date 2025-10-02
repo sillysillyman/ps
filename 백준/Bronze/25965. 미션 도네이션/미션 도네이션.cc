@@ -8,7 +8,7 @@ int main() {
   while (N--) {
     long long n = 0;
     scanf("%d", &M);
-    for (int i = 0; i < M; i++) scanf("%lld%lld%lld", &K[i], &D[i], &A[i]);
+    for (int i = 0; i < M; i++) scanf("%lld%lld%lld", K + i, D + i, A + i);
     scanf("%d%d%d", &k, &d, &a);
     for (int i = 0; i < M; i++)
       if (long long c = k * K[i] - d * D[i] + a * A[i]; c > 0) n += c;
