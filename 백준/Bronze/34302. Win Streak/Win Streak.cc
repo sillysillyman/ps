@@ -1,16 +1,12 @@
-#include <iostream>
-
-using namespace std;
+#include <cstdio>
 
 bool flag;
 int N, S, T, W, w;
 
 int main() {
-  ios_base::sync_with_stdio(0);
-  cin.tie(0);
-  cin >> N;
+  scanf("%d", &N);
   while (N--) {
-    cin >> S >> T;
+    scanf("%d%d", &S, &T);
     if (S > T) {
       w = flag ? w + 1 : 1;
       flag = 1;
@@ -20,5 +16,5 @@ int main() {
     }
     if (w > W) W = w;
   }
-  cout << W;
+  printf("%d", W);
 }
