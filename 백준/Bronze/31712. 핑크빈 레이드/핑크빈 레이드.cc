@@ -1,12 +1,12 @@
 #include <cstdio>
 
 int main() {
-  int CU, CD, CP, DU, DD, DP, H;
-  scanf("%d%d%d%d%d%d%d", &CU, &DU, &CD, &DD, &CP, &DP, &H);
+  int u, d, p, U, D, P, H;
+  scanf("%d%d%d%d%d%d%d", &u, &U, &d, &D, &p, &P, &H);
   for (int t = 0; t < 5001; t++) {
-    if (!(t % CU)) H -= DU;
-    if (!(t % CD)) H -= DD;
-    if (!(t % CP)) H -= DP;
+    if (!(t % u)) H -= U;
+    if (!(t % d)) H -= D;
+    if (!(t % p)) H -= P;
     if (H < 1) return printf("%d", t), 0;
   }
 }
