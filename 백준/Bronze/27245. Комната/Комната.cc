@@ -3,6 +3,6 @@
 int main() {
   int w, l, h;
   scanf("%d%d%d", &w, &l, &h);
-  l < w ? w = l, l = w : 0;
-  printf(1. * w / h >= 2 && 1. * l / w <= 2 ? "good" : "bad");
+  if (l < w) w ^= l ^= w ^= l;
+  printf(2 * h <= w && l <= 2 * w ? "good" : "bad");
 }
