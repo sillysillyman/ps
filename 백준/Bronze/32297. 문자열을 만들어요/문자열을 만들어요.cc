@@ -2,8 +2,7 @@
 #include <cstring>
 
 int main() {
-  char str[11];
-
-  scanf("%*d %s", str);
-  printf("%s", strstr(str, "gori") != nullptr ? "YES" : "NO");
+  char s[11];
+  scanf("%*d%s", s);
+  printf(strstr(s, "gori") ? "YES" : "NO");
 }
