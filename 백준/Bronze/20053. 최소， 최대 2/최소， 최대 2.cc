@@ -1,16 +1,22 @@
-#include <cstdio>
+#include <iostream>
+
+using namespace std;
 
 int main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  cout.tie(0);
+
   int T, N, n, M, m;
-  scanf("%d", &T);
+  cin >> T;
   while (T--) {
     M = -1e6, m = 1e6;
-    scanf("%d", &N);
+    cin >> N;
     while (N--) {
-      scanf("%d", &n);
+      cin >> n;
       if (n > M) M = n;
       if (n < m) m = n;
     }
-    printf("%d %d\n", m, M);
+    cout << m << ' ' << M << '\n';
   }
 }
