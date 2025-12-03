@@ -1,10 +1,8 @@
-#include <cmath>
 #include <cstdio>
 
 int main() {
-  int A, B, D;
+  int A, B, d;
   scanf("%d%d", &A, &B);
-  D = A * A - B;
-  if (D) printf("%d %d", -A - (int)sqrt(D), -A + (int)sqrt(D));
-  else printf("%d", -A);
+  for (d = 0; d * d < A * A - B; d++) ;
+  printf(d ? "%d %d" : "%d", -A - d, -A + d);
 }
