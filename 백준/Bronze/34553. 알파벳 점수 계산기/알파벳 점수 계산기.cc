@@ -1,17 +1,10 @@
-#include <iostream>
-
-using namespace std;
-
-char p = 95, c;
-int x, s;
+#include <cstdio>
 
 int main() {
-  ios_base::sync_with_stdio(0);
-  cin.tie(0);
-
-  while (cin >> c && c != '\0') {
-    s += c > p ? ++x : x = 1;
-    p = c;
-  }
-  cout << s;
+  int x = 1, p = 1;
+  char s[100001];
+  scanf("%s", s);
+  for (int i = 1; s[i]; i++)
+    p += s[i] > s[i - 1] ? ++x : x = 1;
+  printf("%d", p);
 }
