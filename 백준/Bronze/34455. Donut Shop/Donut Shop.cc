@@ -6,7 +6,7 @@ int main() {
   while (E--) {
     char c;
     scanf(" %c%d", &c, &Q);
-    D += (c == '-' ? -1 : 1) * Q;
+    D += c == '-' ? -Q : Q;
   }
   printf("%d", D);
 }
