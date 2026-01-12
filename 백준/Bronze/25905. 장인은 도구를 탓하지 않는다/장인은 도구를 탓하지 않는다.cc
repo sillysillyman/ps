@@ -4,8 +4,8 @@
 int main() {
   double arr[10];
   for (int i = 0; i < 10; i++) scanf("%lf", &arr[i]);
-  std::sort(arr, arr + 10, [](auto a, auto b) { return a > b; });
-  double p = 1e9;
-  for (int i = 0; i < 9; i++) p *= arr[i] / (i + 1);
+  std::sort(arr, arr + 10);
+  double p = 1e9 / 362880;
+  for (int i = 1; i < 10; i++) p *= arr[i];
   printf("%lf", p);
 }
