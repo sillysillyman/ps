@@ -5,7 +5,7 @@ int main() {
   scanf("%d", &N);
   while (N--) {
     scanf("%d", &n);
-    c += n ? 1 : -1;
+    c += 2 * n - 1;
   }
   printf("Junhee is %scute!", c > 0 ? "" : "not ");
 }
