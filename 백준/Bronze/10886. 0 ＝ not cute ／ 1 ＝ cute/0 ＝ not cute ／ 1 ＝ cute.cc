@@ -7,5 +7,5 @@ int main() {
     scanf("%d", &n);
     c += n ? 1 : -1;
   }
-  printf(c > 0 ? "Junhee is cute!" : "Junhee is not cute!");
+  printf("Junhee is %scute!", c > 0 ? "" : "not ");
 }
