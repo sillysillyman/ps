@@ -1,7 +1,8 @@
 #include <cstdio>
 
+int N, n, c;
+
 int main() {
-  int N, n, c = 0;
   scanf("%d", &N);
   while (N--) {
     scanf("%d", &n);
