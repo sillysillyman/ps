@@ -8,5 +8,5 @@ int main() {
     scanf("%d", &a);
     a % 2 ? ++c : --c;
   }
-  printf("%d", !c || c == 1);
+  printf("%d", c < 2u);
 }
