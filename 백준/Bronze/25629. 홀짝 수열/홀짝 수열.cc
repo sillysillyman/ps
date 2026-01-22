@@ -1,12 +1,12 @@
 #include <cstdio>
 
-int N, a, odd, even;
+int N, a, c;
 
 int main() {
   scanf("%d", &N);
   while (N--) {
     scanf("%d", &a);
-    a % 2 ? ++odd : ++even;
+    a % 2 ? ++c : --c;
   }
-  printf("%d", odd >= even && odd - even < 2);
+  printf("%d", !c || c == 1);
 }
