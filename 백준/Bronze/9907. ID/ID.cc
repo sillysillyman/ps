@@ -1,10 +1,9 @@
 #include <cstdio>
 
 int main() {
-  int n = 0;
-  char s[8];
-  scanf("%s", s);
-  for (int i = 0; s[i]; i++) n += (!i || i == 6 ? 2 : 8 - i) * (s[i] - '0');
+  int n = 0, N;
+  scanf("%d", &N);
+  for (int i = 0; i < 7; i++, N /= 10) n += (i > 5 ? 2 : 2 + i) * (N % 10);
   n %= 11;
-  printf("%c", !n ? 'J' : n == 10 ? 'Z' : 'A' + --n);
+  printf("%c", !n ? 'J' : n > 9 ? 'Z' : 'A' + --n);
 }
