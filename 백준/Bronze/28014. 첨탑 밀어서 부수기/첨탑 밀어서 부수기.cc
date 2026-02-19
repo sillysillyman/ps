@@ -1,17 +1,37 @@
-#include <iostream>
+#include <cstdio>
 
-using namespace std;
+static const int BUFSZ = 1 << 20;
+static unsigned char buf[BUFSZ];
+static int idx = 0, sz = 0;
 
-int N, p, c, n;
+inline int readInt() {
+  int x = 0;
+  unsigned char c;
+  do {
+    if (idx >= sz) {
+      sz = fread(buf, 1, BUFSZ, stdin);
+      idx = 0;
+    }
+    c = buf[idx++];
+  } while (c <= ' ');
+  do {
+    x = x * 10 + (c - '0');
+    if (idx >= sz) {
+      sz = fread(buf, 1, BUFSZ, stdin);
+      idx = 0;
+    }
+    c = buf[idx++];
+  } while (c > ' ');
+  return x;
+}
 
 int main() {
-  ios_base::sync_with_stdio(0);
-  cin.tie(0);
-  cin >> N;
+  int N = readInt();
+  int p = 0, n = 0;
   for (int i = 0; i < N; i++) {
-    cin >> c;
-    if (c >= p) n++;
+    int c = readInt();
+    n += (c >= p);
     p = c;
   }
-  cout << n;
+  printf("%d\n", n);
 }
