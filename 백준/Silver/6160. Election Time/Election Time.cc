@@ -18,6 +18,5 @@ int main() {
     arr[i].i = i + 1;
   }
   sort(arr, arr + N, [](auto &a, auto &b) { return a.f > b.f; });
-  sort(arr, arr + K, [](auto &a, auto &b) { return a.s > b.s; });
-  cout << arr[0].i;
+  cout << max_element(arr, arr + K, [](auto &a, auto &b) { return a.s < b.s; })->i;
 }
