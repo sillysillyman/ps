@@ -1,5 +1,5 @@
 #include <algorithm>
-#include <cstdio>
+#include <iostream>
 
 using namespace std;
 
@@ -8,14 +8,16 @@ struct Vote {
 };
 
 int main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
   int N, K;
   Vote arr[50000];
-  scanf("%d%d", &N, &K);
+  cin >> N >> K;
   for (int i = 0; i < N; i++) {
-    scanf("%d%d", &arr[i].f, &arr[i].s);
+    cin >> arr[i].f >> arr[i].s;
     arr[i].i = i + 1;
   }
   sort(arr, arr + N, [](auto &a, auto &b) { return a.f > b.f; });
   sort(arr, arr + K, [](auto &a, auto &b) { return a.s > b.s; });
-  printf("%d", arr[0].i);
+  cout << arr[0].i;
 }
