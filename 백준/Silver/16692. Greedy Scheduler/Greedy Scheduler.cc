@@ -7,8 +7,8 @@ int main() {
   scanf("%d%d", &n, &c);
   for (int t, i = 0; i < c; i++) {
     scanf("%d", &t);
-    int *p = std::min_element(T, T + n);
-    *p += t;
-    printf("%ld ", p - T + 1);
+    int x = std::min_element(T, T + n) - T;
+    T[x] += t;
+    printf("%d ", x + 1);
   }
 }
