@@ -1,0 +1,1 @@
+main(A){scanf("%d",&A);printf("%d",A*10/11);}
