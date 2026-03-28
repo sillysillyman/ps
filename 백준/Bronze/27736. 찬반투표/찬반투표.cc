@@ -8,5 +8,5 @@ int main() {
     scanf("%d", &n);
     arr[++n]++;
   }
-  puts(arr[1] > N / 2 ? "INVALID" : arr[2] > arr[0] ? "APPROVED" : "REJECTED");
+  puts(arr[1] >= N / 2 + N % 2 ? "INVALID" : arr[2] > arr[0] ? "APPROVED" : "REJECTED");
 }
