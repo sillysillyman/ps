@@ -9,8 +9,7 @@ int main() {
     scanf("%d", &N);
     for (int i = 0; i < N; i++) {
       scanf("%lld", &x);
-      r += x;
-      r %= N;
+      r = (r + x) % N;
     }
     printf(r ? "NO\n" : "YES\n");
   }
