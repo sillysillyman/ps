@@ -1,21 +1,17 @@
-#include <iostream>
-
-using namespace std;
+#include <cstdio>
 
 int main() {
-  ios_base::sync_with_stdio(0);
-  cin.tie(0);
   int T, N;
   long long x, r;
-  cin >> T;
+  scanf("%d", &T);
   while (T--) {
-    cin >> N;
     r = 0;
+    scanf("%d", &N);
     for (int i = 0; i < N; i++) {
-      cin >> x;
+      scanf("%lld", &x);
       r += x;
       r %= N;
     }
-    cout << (r ? "NO\n" : "YES\n");
+    printf(r ? "NO\n" : "YES\n");
   }
 }
