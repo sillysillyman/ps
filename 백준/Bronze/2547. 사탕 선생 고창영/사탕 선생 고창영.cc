@@ -11,6 +11,6 @@ int main() {
       scanf("%lld", &x);
       r = (r + x) % N;
     }
-    printf(r ? "NO\n" : "YES\n");
+    puts(r ? "NO" : "YES");
   }
 }
