@@ -1,8 +1,9 @@
 #include <cstdio>
 
+int x, c, N = 10;
+int arr[5];
+
 int main() {
-  int x, c = 0, N = 10;
-  int arr[5] = {};
   while (N--) {
     scanf("%d", &x);
     arr[x]++;
