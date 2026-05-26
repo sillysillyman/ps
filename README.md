@@ -22,9 +22,11 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0724-find-pivot-index](https://github.com/sillysillyman/ps/tree/main/0724-find-pivot-index/) | Easy |
 | [1732-find-the-highest-altitude](https://github.com/sillysillyman/ps/tree/main/1732-find-the-highest-altitude/) | Easy |
 ## Prefix Sum
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0724-find-pivot-index](https://github.com/sillysillyman/ps/tree/main/0724-find-pivot-index/) | Easy |
 | [1732-find-the-highest-altitude](https://github.com/sillysillyman/ps/tree/main/1732-find-the-highest-altitude/) | Easy |
 <!---LeetCode Topics End-->
