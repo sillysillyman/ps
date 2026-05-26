@@ -23,6 +23,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0724-find-pivot-index](https://github.com/sillysillyman/ps/tree/main/0724-find-pivot-index/) | Easy |
+| [1207-unique-number-of-occurrences](https://github.com/sillysillyman/ps/tree/main/1207-unique-number-of-occurrences/) | Easy |
 | [1732-find-the-highest-altitude](https://github.com/sillysillyman/ps/tree/main/1732-find-the-highest-altitude/) | Easy |
 | [2215-find-the-difference-of-two-arrays](https://github.com/sillysillyman/ps/tree/main/2215-find-the-difference-of-two-arrays/) | Easy |
 ## Prefix Sum
@@ -33,5 +34,6 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1207-unique-number-of-occurrences](https://github.com/sillysillyman/ps/tree/main/1207-unique-number-of-occurrences/) | Easy |
 | [2215-find-the-difference-of-two-arrays](https://github.com/sillysillyman/ps/tree/main/2215-find-the-difference-of-two-arrays/) | Easy |
 <!---LeetCode Topics End-->
