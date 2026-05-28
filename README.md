@@ -23,6 +23,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0724-find-pivot-index](https://github.com/sillysillyman/ps/tree/main/0724-find-pivot-index/) | Easy |
+| [0746-min-cost-climbing-stairs](https://github.com/sillysillyman/ps/tree/main/0746-min-cost-climbing-stairs/) | Easy |
 | [1207-unique-number-of-occurrences](https://github.com/sillysillyman/ps/tree/main/1207-unique-number-of-occurrences/) | Easy |
 | [1732-find-the-highest-altitude](https://github.com/sillysillyman/ps/tree/main/1732-find-the-highest-altitude/) | Easy |
 | [2215-find-the-difference-of-two-arrays](https://github.com/sillysillyman/ps/tree/main/2215-find-the-difference-of-two-arrays/) | Easy |
@@ -43,6 +44,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Dynamic Programming
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0746-min-cost-climbing-stairs](https://github.com/sillysillyman/ps/tree/main/0746-min-cost-climbing-stairs/) | Easy |
 | [1137-n-th-tribonacci-number](https://github.com/sillysillyman/ps/tree/main/1137-n-th-tribonacci-number/) | Easy |
 ## Memoization
 | Problem Name | Difficulty |
