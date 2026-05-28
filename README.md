@@ -36,4 +36,16 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | ------- | ------- |
 | [1207-unique-number-of-occurrences](https://github.com/sillysillyman/ps/tree/main/1207-unique-number-of-occurrences/) | Easy |
 | [2215-find-the-difference-of-two-arrays](https://github.com/sillysillyman/ps/tree/main/2215-find-the-difference-of-two-arrays/) | Easy |
+## Math
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1137-n-th-tribonacci-number](https://github.com/sillysillyman/ps/tree/main/1137-n-th-tribonacci-number/) | Easy |
+## Dynamic Programming
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1137-n-th-tribonacci-number](https://github.com/sillysillyman/ps/tree/main/1137-n-th-tribonacci-number/) | Easy |
+## Memoization
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1137-n-th-tribonacci-number](https://github.com/sillysillyman/ps/tree/main/1137-n-th-tribonacci-number/) | Easy |
 <!---LeetCode Topics End-->
