@@ -53,6 +53,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Database
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0577-employee-bonus](https://github.com/sillysillyman/ps/tree/main/0577-employee-bonus/) | Easy |
 | [0584-find-customer-referee](https://github.com/sillysillyman/ps/tree/main/0584-find-customer-referee/) | Easy |
 | [0595-big-countries](https://github.com/sillysillyman/ps/tree/main/0595-big-countries/) | Easy |
 | [1148-article-views-i](https://github.com/sillysillyman/ps/tree/main/1148-article-views-i/) | Easy |
