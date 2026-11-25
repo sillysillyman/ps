@@ -4,18 +4,16 @@
 using namespace std;
 
 int main() {
-  int N;
-  int arr[1000];
+  int N, M = 0;
   scanf("%d", &N);
-  for (int i = 0; i < N; i++) {
-    int a, b, c;
-    scanf("%d%d%d", &a, &b, &c);
-    arr[i] = a == b && b == c             ? 1000 * (10 + a)
-             : a != b && b != c && c != a ? 100 * max({a, b, c})
-                                          : 1000 + 100 * (a == b   ? a
-                                                          : b == c ? b
-                                                                   : c);
+  while (N--) {
+    int d[3];
+    scanf("%d%d%d", &d[0], &d[1], &d[2]);
+    sort(d, d + 3);
+    int v = d[0] == d[2]                   ? 1000 * (10 + d[0])
+            : d[0] == d[1] || d[1] == d[2] ? 100 * (10 + d[1])
+                                           : 100 * d[2];
+    M = max(M, v);
   }
-  sort(arr, arr + N);
-  printf("%d", arr[N - 1]);
+  printf("%d", M);
 }
